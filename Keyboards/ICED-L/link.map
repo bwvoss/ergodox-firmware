@@ -937,7 +937,7 @@ LOAD CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
 LOAD CMakeFiles/kiibohd.elf.dir/Debug/led/led.c.o
 LOAD CMakeFiles/kiibohd.elf.dir/Debug/print/print.c.o
 
-.text           0x0000000000002000     0xcdd0
+.text           0x0000000000002000     0xa32c
                 0x0000000000000000                . = 0x0
  *(.vectors)
  .vectors       0x0000000000002000      0x1bc CMakeFiles/kiibohd.elf.dir/Lib/mk20dx.c.o
@@ -3233,51 +3233,51 @@ LOAD CMakeFiles/kiibohd.elf.dir/Debug/print/print.c.o
                 0x000000000000bd0a       0x29 CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
                 0x000000000000bd0a                versionCLIDict_DescEntry
  .rodata.str1.1
-                0x000000000000bd33     0x2f1c CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
-                                       0x2fc6 (size before relaxing)
+                0x000000000000bd33      0x478 CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
+                                        0x522 (size before relaxing)
  .rodata.resetCLIDict_DescEntry
-                0x000000000000ec4f       0x2e CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
-                0x000000000000ec4f                resetCLIDict_DescEntry
- *fill*         0x000000000000ec7d        0x3 
+                0x000000000000c1ab       0x2e CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
+                0x000000000000c1ab                resetCLIDict_DescEntry
+ *fill*         0x000000000000c1d9        0x3 
  .rodata.basicCLIDict
-                0x000000000000ec80       0x6c CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
-                0x000000000000ec80                basicCLIDict
+                0x000000000000c1dc       0x6c CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
+                0x000000000000c1dc                basicCLIDict
  .rodata.ledCLIDict_DescEntry
-                0x000000000000ecec       0x96 CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
-                0x000000000000ecec                ledCLIDict_DescEntry
+                0x000000000000c248       0x96 CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
+                0x000000000000c248                ledCLIDict_DescEntry
  .rodata.basicCLIDictName
-                0x000000000000ed82       0x11 CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
-                0x000000000000ed82                basicCLIDictName
+                0x000000000000c2de       0x11 CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
+                0x000000000000c2de                basicCLIDictName
  .rodata.cliDebugCLIDict_DescEntry
-                0x000000000000ed93       0x3a CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
-                0x000000000000ed93                cliDebugCLIDict_DescEntry
-                0x000000000000edd0                . = ALIGN (0x4)
- *fill*         0x000000000000edcd        0x3 
+                0x000000000000c2ef       0x3a CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
+                0x000000000000c2ef                cliDebugCLIDict_DescEntry
+                0x000000000000c32c                . = ALIGN (0x4)
+ *fill*         0x000000000000c329        0x3 
  *(.init)
 
-.glue_7         0x000000000000edd0        0x0
+.glue_7         0x000000000000c32c        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x000000000000edd0        0x0
+.glue_7t        0x000000000000c32c        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x000000000000edd0        0x0
+.vfp11_veneer   0x000000000000c32c        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x000000000000edd0        0x0
+.v4_bx          0x000000000000c32c        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x000000000000edd0        0x0
+.iplt           0x000000000000c32c        0x0
  .iplt          0x0000000000000000        0x0 CMakeFiles/kiibohd.elf.dir/main.c.o
 
-.rel.dyn        0x000000000000edd0        0x0
+.rel.dyn        0x000000000000c32c        0x0
  .rel.iplt      0x0000000000000000        0x0 CMakeFiles/kiibohd.elf.dir/main.c.o
 
-.ARM.exidx      0x000000000000edd0        0x0
-                0x000000000000edd0                __exidx_start = .
+.ARM.exidx      0x000000000000c32c        0x0
+                0x000000000000c32c                __exidx_start = .
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000000000000edd0                __exidx_end = .
-                0x000000000000edd0                _etext = .
+                0x000000000000c32c                __exidx_end = .
+                0x000000000000c32c                _etext = .
 
 .usbdescriptortable
                 0x000000001fff8000      0x120
@@ -3296,7 +3296,7 @@ LOAD CMakeFiles/kiibohd.elf.dir/Debug/print/print.c.o
  .usbbuffers    0x000000001fff8120      0x870 CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_mem.c.o
                 0x000000001fff8120                usb_buffer_memory
 
-.data           0x000000001fff8990      0x7f4 load address 0x000000000000edd0
+.data           0x000000001fff8990      0x7f4 load address 0x000000000000c32c
                 0x000000001fff8990                . = ALIGN (0x4)
                 0x000000001fff8990                _sdata = .
  *(.data*)
@@ -3403,13 +3403,13 @@ LOAD CMakeFiles/kiibohd.elf.dir/Debug/print/print.c.o
  *fill*         0x000000001fff9183        0x1 
                 0x000000001fff9184                _edata = .
 
-.igot.plt       0x000000001fff9184        0x0 load address 0x000000000000f5c4
+.igot.plt       0x000000001fff9184        0x0 load address 0x000000000000cb20
  .igot.plt      0x0000000000000000        0x0 CMakeFiles/kiibohd.elf.dir/main.c.o
 
 .noinit
  *(.noinit*)
 
-.bss            0x000000001fff9184     0x1310 load address 0x000000000000f5c4
+.bss            0x000000001fff9184     0x1310 load address 0x000000000000cb20
                 0x000000001fff9184                . = ALIGN (0x4)
                 0x000000001fff9184                _sbss = .
  *(.bss*)
@@ -3874,48 +3874,48 @@ OUTPUT(kiibohd.elf elf32-littlearm)
  .debug_line    0x00000000000068e4      0x220 CMakeFiles/kiibohd.elf.dir/Debug/led/led.c.o
  .debug_line    0x0000000000006b04      0x457 CMakeFiles/kiibohd.elf.dir/Debug/print/print.c.o
 
-.debug_str      0x0000000000000000    0x27ba4
+.debug_str      0x0000000000000000    0x24350
  .debug_str     0x0000000000000000    0x14273 CMakeFiles/kiibohd.elf.dir/main.c.o
                                       0x143e5 (size before relaxing)
  .debug_str     0x0000000000014273      0x1b4 CMakeFiles/kiibohd.elf.dir/Lib/mk20dx.c.o
                                       0x14276 (size before relaxing)
  .debug_str     0x0000000000014427       0x6b CMakeFiles/kiibohd.elf.dir/Lib/delay.c.o
                                       0x13921 (size before relaxing)
- .debug_str     0x0000000000014492     0xa0d6 CMakeFiles/kiibohd.elf.dir/Scan/ISSILed/led_scan.c.o
-                                      0x1e49b (size before relaxing)
- .debug_str     0x000000000001e568      0x54a CMakeFiles/kiibohd.elf.dir/Scan/MatrixARM/matrix_scan.c.o
-                                      0x1a9cf (size before relaxing)
- .debug_str     0x000000000001eab2      0x380 CMakeFiles/kiibohd.elf.dir/Scan/STLcd/lcd_scan.c.o
-                                      0x1e275 (size before relaxing)
- .debug_str     0x000000000001ee32      0xe18 CMakeFiles/kiibohd.elf.dir/Scan/UARTConnect/connect_scan.c.o
-                                      0x1eb8a (size before relaxing)
- .debug_str     0x000000000001fc4a      0xc9d CMakeFiles/kiibohd.elf.dir/Scan/MDErgo1-CustomLogo/scan_loop.c.o
+ .debug_str     0x0000000000014492     0x749b CMakeFiles/kiibohd.elf.dir/Scan/ISSILed/led_scan.c.o
+                                      0x1b7c6 (size before relaxing)
+ .debug_str     0x000000000001b92d      0x54a CMakeFiles/kiibohd.elf.dir/Scan/MatrixARM/matrix_scan.c.o
+                                      0x17cfa (size before relaxing)
+ .debug_str     0x000000000001be77      0x380 CMakeFiles/kiibohd.elf.dir/Scan/STLcd/lcd_scan.c.o
+                                      0x1b5a0 (size before relaxing)
+ .debug_str     0x000000000001c1f7      0xe18 CMakeFiles/kiibohd.elf.dir/Scan/UARTConnect/connect_scan.c.o
+                                      0x1beb5 (size before relaxing)
+ .debug_str     0x000000000001d00f       0x84 CMakeFiles/kiibohd.elf.dir/Scan/MDErgo1-CustomLogo/scan_loop.c.o
                                       0x1b04f (size before relaxing)
- .debug_str     0x00000000000208e7     0x1dd0 CMakeFiles/kiibohd.elf.dir/Macro/PartialMap/macro.c.o
-                                      0x1fbac (size before relaxing)
- .debug_str     0x00000000000226b7       0xac CMakeFiles/kiibohd.elf.dir/Macro/PartialMap/result.c.o
-                                      0x1daf5 (size before relaxing)
- .debug_str     0x0000000000022763      0x29c CMakeFiles/kiibohd.elf.dir/Macro/PartialMap/trigger.c.o
-                                      0x1ddf5 (size before relaxing)
- .debug_str     0x00000000000229ff     0x213b CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/output_com.c.o
-                                      0x1c706 (size before relaxing)
- .debug_str     0x0000000000024b3a      0x3c3 CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_desc.c.o
-                                       0xa176 (size before relaxing)
- .debug_str     0x0000000000024efd      0x57b CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_dev.c.o
-                                      0x1b22d (size before relaxing)
- .debug_str     0x0000000000025478     0x1fd1 CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_keyboard.c.o
+ .debug_str     0x000000000001d093     0x1dd0 CMakeFiles/kiibohd.elf.dir/Macro/PartialMap/macro.c.o
+                                      0x1ced7 (size before relaxing)
+ .debug_str     0x000000000001ee63       0xac CMakeFiles/kiibohd.elf.dir/Macro/PartialMap/result.c.o
+                                      0x1ae20 (size before relaxing)
+ .debug_str     0x000000000001ef0f      0x29c CMakeFiles/kiibohd.elf.dir/Macro/PartialMap/trigger.c.o
+                                      0x1b120 (size before relaxing)
+ .debug_str     0x000000000001f1ab     0x213b CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/output_com.c.o
+                                      0x19a31 (size before relaxing)
+ .debug_str     0x00000000000212e6      0x3c3 CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_desc.c.o
+                                       0x74a1 (size before relaxing)
+ .debug_str     0x00000000000216a9      0x57b CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_dev.c.o
+                                      0x18558 (size before relaxing)
+ .debug_str     0x0000000000021c24     0x1fd1 CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_keyboard.c.o
                                       0x17b98 (size before relaxing)
- .debug_str     0x0000000000027449       0x50 CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_mem.c.o
+ .debug_str     0x0000000000023bf5       0x50 CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_mem.c.o
                                       0x14708 (size before relaxing)
- .debug_str     0x0000000000027499      0x1fc CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_mouse.c.o
+ .debug_str     0x0000000000023c45      0x1fc CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_mouse.c.o
                                       0x17c6f (size before relaxing)
- .debug_str     0x0000000000027695       0xe2 CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_serial.c.o
+ .debug_str     0x0000000000023e41       0xe2 CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_serial.c.o
                                       0x176be (size before relaxing)
- .debug_str     0x0000000000027777      0x27f CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
-                                      0x1a6e3 (size before relaxing)
- .debug_str     0x00000000000279f6       0x16 CMakeFiles/kiibohd.elf.dir/Debug/led/led.c.o
+ .debug_str     0x0000000000023f23      0x27f CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o
+                                      0x17a0e (size before relaxing)
+ .debug_str     0x00000000000241a2       0x16 CMakeFiles/kiibohd.elf.dir/Debug/led/led.c.o
                                       0x138f1 (size before relaxing)
- .debug_str     0x0000000000027a0c      0x198 CMakeFiles/kiibohd.elf.dir/Debug/print/print.c.o
+ .debug_str     0x00000000000241b8      0x198 CMakeFiles/kiibohd.elf.dir/Debug/print/print.c.o
                                        0x3b1f (size before relaxing)
 
 .comment        0x0000000000000000       0x70

@@ -3,7 +3,7 @@ kiibohd.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         0000cd54  00002000  00002000  00002000  2**2
+  0 .text         0000a6f4  00002000  00002000  00002000  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   1 .usbdescriptortable 00000120  1fff8000  1fff8000  00018000  2**2
                   ALLOC
@@ -11,9 +11,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS
   3 .usbbuffers   00000870  1fff8120  1fff8120  00018000  2**0
                   ALLOC
-  4 .data         00000778  1fff8990  0000ed54  00010990  2**2
+  4 .data         00000778  1fff8990  0000c6f4  00010990  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  5 .bss          00001310  1fff9108  0000f4cc  00011108  2**2
+  5 .bss          00001310  1fff9108  0000ce6c  00011108  2**2
                   ALLOC
   6 .debug_info   00011242  00000000  00000000  00011108  2**0
                   CONTENTS, READONLY, DEBUGGING
@@ -27,15 +27,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  11 .debug_line   00006f5b  00000000  00000000  00030548  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_str    000279d3  00000000  00000000  000374a3  2**0
+ 12 .debug_str    00024601  00000000  00000000  000374a3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .comment      00000070  00000000  00000000  0005ee76  2**0
+ 13 .comment      00000070  00000000  00000000  0005baa4  2**0
                   CONTENTS, READONLY
- 14 .ARM.attributes 00000033  00000000  00000000  0005eee6  2**0
+ 14 .ARM.attributes 00000033  00000000  00000000  0005bb14  2**0
                   CONTENTS, READONLY
- 15 .debug_frame  0000195c  00000000  00000000  0005ef1c  2**2
+ 15 .debug_frame  0000195c  00000000  00000000  0005bb48  2**2
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_loc    00006c7e  00000000  00000000  00060878  2**0
+ 16 .debug_loc    00006c7e  00000000  00000000  0005d4a4  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -315,7 +315,7 @@ void ResetHandler()
     22bc:	00043f82 	.word	0x00043f82
     22c0:	0b000001 	.word	0x0b000001
     22c4:	40048030 	.word	0x40048030
-    22c8:	0000ed50 	.word	0x0000ed50
+    22c8:	0000c6f0 	.word	0x0000c6f0
     22cc:	1fff8990 	.word	0x1fff8990
     22d0:	1fff9108 	.word	0x1fff9108
     22d4:	1fff9108 	.word	0x1fff9108
@@ -16573,7 +16573,7 @@ static void usb_setup()
     6b64:	1fff9432 	.word	0x1fff9432
     6b68:	400720c0 	.word	0x400720c0
     6b6c:	0000ba6c 	.word	0x0000ba6c
-    6b70:	0000ea21 	.word	0x0000ea21
+    6b70:	0000c3c3 	.word	0x0000c3c3
     6b74:	0000badf 	.word	0x0000badf
     6b78:	0000bad5 	.word	0x0000bad5
     6b7c:	1fff9108 	.word	0x1fff9108
@@ -18768,17 +18768,17 @@ void cliFunc_version( char* args )
     7598:	0000bcdb 	.word	0x0000bcdb
     759c:	0000bd1e 	.word	0x0000bd1e
     75a0:	0000bd3f 	.word	0x0000bd3f
-    75a4:	0000e82c 	.word	0x0000e82c
-    75a8:	0000e871 	.word	0x0000e871
-    75ac:	0000e8a5 	.word	0x0000e8a5
-    75b0:	0000e8db 	.word	0x0000e8db
-    75b4:	0000e90f 	.word	0x0000e90f
-    75b8:	0000e937 	.word	0x0000e937
-    75bc:	0000e955 	.word	0x0000e955
-    75c0:	0000e97d 	.word	0x0000e97d
-    75c4:	0000e9a1 	.word	0x0000e9a1
-    75c8:	0000e9c4 	.word	0x0000e9c4
-    75cc:	0000ea25 	.word	0x0000ea25
+    75a4:	0000c1ce 	.word	0x0000c1ce
+    75a8:	0000c213 	.word	0x0000c213
+    75ac:	0000c247 	.word	0x0000c247
+    75b0:	0000c27d 	.word	0x0000c27d
+    75b4:	0000c2b1 	.word	0x0000c2b1
+    75b8:	0000c2d9 	.word	0x0000c2d9
+    75bc:	0000c2f7 	.word	0x0000c2f7
+    75c0:	0000c31f 	.word	0x0000c31f
+    75c4:	0000c343 	.word	0x0000c343
+    75c8:	0000c366 	.word	0x0000c366
+    75cc:	0000c3c7 	.word	0x0000c3c7
     75d0:	40048054 	.word	0x40048054
     75d4:	40048058 	.word	0x40048058
     75d8:	4004805c 	.word	0x4004805c
@@ -18829,8 +18829,8 @@ void cliFunc_cliDebug( char* args )
     7606:	bd10      	pop	{r4, pc}
     7608:	1fff9450 	.word	0x1fff9450
     760c:	0000bba5 	.word	0x0000bba5
-    7610:	0000ea3e 	.word	0x0000ea3e
-    7614:	0000ea6d 	.word	0x0000ea6d
+    7610:	0000c3e0 	.word	0x0000c3e0
+    7614:	0000c40f 	.word	0x0000c40f
 
 00007618 <CLI_argumentIsolation>:
 // Takes a string, returns two pointers
@@ -18998,13 +18998,13 @@ void CLI_commandLookup()
     76d4:	1fff9453 	.word	0x1fff9453
     76d8:	0000bba5 	.word	0x0000bba5
     76dc:	000093cc 	.word	0x000093cc
-    76e0:	0000eaab 	.word	0x0000eaab
-    76e4:	0000eaad 	.word	0x0000eaad
+    76e0:	0000c44d 	.word	0x0000c44d
+    76e4:	0000c44f 	.word	0x0000c44f
     76e8:	0000bbee 	.word	0x0000bbee
-    76ec:	0000ea9b 	.word	0x0000ea9b
-    76f0:	0000ea9e 	.word	0x0000ea9e
+    76ec:	0000c43d 	.word	0x0000c43d
+    76f0:	0000c440 	.word	0x0000c440
     76f4:	0000ac08 	.word	0x0000ac08
-    76f8:	0000eaa5 	.word	0x0000eaa5
+    76f8:	0000c447 	.word	0x0000c447
     76fc:	1fff98a4 	.word	0x1fff98a4
 
 00007700 <CLI_registerDictionary>:
@@ -19051,7 +19051,7 @@ void CLI_registerDictionary( const CLIDictItem *cmdDict, const char* dictName )
     7724:	bd10      	pop	{r4, pc}
     7726:	bf00      	nop
     7728:	1fff9453 	.word	0x1fff9453
-    772c:	0000eadb 	.word	0x0000eadb
+    772c:	0000c47d 	.word	0x0000c47d
     7730:	1fff98d0 	.word	0x1fff98d0
     7734:	1fff98a4 	.word	0x1fff98a4
 
@@ -19136,14 +19136,14 @@ inline void prompt()
     7770:	bd10      	pop	{r4, pc}
     7772:	bf00      	nop
     7774:	1fff98f8 	.word	0x1fff98f8
-    7778:	0000eb20 	.word	0x0000eb20
+    7778:	0000c4c2 	.word	0x0000c4c2
     777c:	1fff98a1 	.word	0x1fff98a1
     7780:	1fff9451 	.word	0x1fff9451
     7784:	1fff98cc 	.word	0x1fff98cc
-    7788:	0000eb26 	.word	0x0000eb26
+    7788:	0000c4c8 	.word	0x0000c4c8
     778c:	1fff9453 	.word	0x1fff9453
-    7790:	0000ec04 	.word	0x0000ec04
-    7794:	0000ed06 	.word	0x0000ed06
+    7790:	0000c5a4 	.word	0x0000c5a4
+    7794:	0000c6a6 	.word	0x0000c6a6
     7798:	1fff9452 	.word	0x1fff9452
     779c:	1fff9450 	.word	0x1fff9450
 
@@ -19334,8 +19334,8 @@ inline void prompt()
     7848:	1fff98f8 	.word	0x1fff98f8
     784c:	1fff9453 	.word	0x1fff9453
     7850:	1fff98a4 	.word	0x1fff98a4
-    7854:	0000eb20 	.word	0x0000eb20
-    7858:	0000eb26 	.word	0x0000eb26
+    7854:	0000c4c2 	.word	0x0000c4c2
+    7858:	0000c4c8 	.word	0x0000c4c8
     785c:	1fff983c 	.word	0x1fff983c
 
 00007860 <CLI_wrap>:
@@ -19528,8 +19528,8 @@ inline void prompt()
     7912:	bf00      	nop
     7914:	1fff9454 	.word	0x1fff9454
     7918:	1fff98f8 	.word	0x1fff98f8
-    791c:	0000eb20 	.word	0x0000eb20
-    7920:	0000eb26 	.word	0x0000eb26
+    791c:	0000c4c2 	.word	0x0000c4c2
+    7920:	0000c4c8 	.word	0x0000c4c8
     7924:	1fff983c 	.word	0x1fff983c
 
 00007928 <CLI_process>:
@@ -20051,20 +20051,20 @@ inline void prompt()
     7afa:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
     7afc:	1fff98f8 	.word	0x1fff98f8
     7b00:	0000bba5 	.word	0x0000bba5
-    7b04:	0000eb34 	.word	0x0000eb34
+    7b04:	0000c4d6 	.word	0x0000c4d6
     7b08:	1fff983c 	.word	0x1fff983c
     7b0c:	1fff9450 	.word	0x1fff9450
-    7b10:	0000eb8b 	.word	0x0000eb8b
-    7b14:	0000eb91 	.word	0x0000eb91
+    7b10:	0000c52d 	.word	0x0000c52d
+    7b14:	0000c533 	.word	0x0000c533
     7b18:	0000852a 	.word	0x0000852a
-    7b1c:	0000eb96 	.word	0x0000eb96
+    7b1c:	0000c538 	.word	0x0000c538
     7b20:	1fff98cc 	.word	0x1fff98cc
     7b24:	1fff98a1 	.word	0x1fff98a1
     7b28:	1fff9451 	.word	0x1fff9451
     7b2c:	1fff9454 	.word	0x1fff9454
-    7b30:	0000eb20 	.word	0x0000eb20
-    7b34:	0000eb26 	.word	0x0000eb26
-    7b38:	0000eb9a 	.word	0x0000eb9a
+    7b30:	0000c4c2 	.word	0x0000c4c2
+    7b34:	0000c4c8 	.word	0x0000c4c8
+    7b38:	0000c53c 	.word	0x0000c53c
 
 00007b3c <init_errorLED>:
 
@@ -21247,34 +21247,34 @@ int numToInt( char* in )
 00008d91 <STLcdDefaultImage>:
     8d91:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8da1:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
-    8db1:	ff ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00     ................
-    8dc1:	c0 c0 c0 c0 c0 00 00 00 00 00 00 00 00 00 00 00     ................
-    8dd1:	ff ff ff ff ff 1f 1f 1f 1f 1f 1f 1f 1f 1f 1f 1f     ................
-    8de1:	1f 1f 1f 1f 1f 1f 1f 1f 1f 1f 1f 1f 1f 1f 1f 1f     ................
+    8db1:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
+    8dc1:	00 00 00 e0 e0 00 f8 f8 00 cc cc 00 3e 3e 00 cc     ............>>..
+    8dd1:	cc 00 3e 3e 00 cc cc 00 f8 f8 00 e0 e0 00 00 00     ..>>............
+    8de1:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8df1:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8e01:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8e11:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8e21:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
-    8e31:	ff ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00     ................
-    8e41:	03 03 03 03 03 00 00 00 00 00 00 00 00 00 00 00     ................
-    8e51:	ff ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00     ................
+    8e31:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
+    8e41:	80 fc fe 07 01 6c 6f 03 00 07 07 00 07 07 60 f7     .....lo.......`.
+    8e51:	f7 60 07 07 00 07 07 00 07 6f 6c 01 07 fe fc 80     .`.......ol.....
     8e61:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8e71:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8e81:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8e91:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8ea1:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
-    8eb1:	ff ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00     ................
-    8ec1:	c0 c0 c0 c0 c0 00 00 00 00 00 00 00 00 00 00 00     ................
-    8ed1:	ff ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00     ................
-    8ee1:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
+    8eb1:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff     ................
+    8ec1:	ff 81 00 00 f0 fc 0c 0c 0e 0e 1c fc f0 00 00 07     ................
+    8ed1:	07 00 00 f0 fc 1c 0c 0e 0e 0c fc f0 00 00 81 ff     ................
+    8ee1:	ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8ef1:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8f01:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8f11:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8f21:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
-    8f31:	ff ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00     ................
-    8f41:	03 03 03 03 03 00 00 00 00 00 00 00 00 00 00 00     ................
-    8f51:	ff ff ff ff ff f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8     ................
-    8f61:	f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8     ................
+    8f31:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
+    8f41:	07 0f 0c 18 18 30 33 63 63 63 63 63 60 70 70 7c     .....03ccccc`pp|
+    8f51:	7c 70 70 60 63 63 63 63 63 33 30 18 18 0c 0f 07     |pp`ccccc30.....
+    8f61:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8f71:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
     8f81:	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
 
@@ -23183,791 +23183,176 @@ int numToInt( char* in )
     bcbe:	0d 00 1b 63 00 0d 0a 1b 5b 31 3b 33 32 6d 00 1b     ...c....[1;32m..
     bcce:	5b 30 6d 0d 0a 00 20 1b 5b 33 35 6d 00 20 1b 5b     [0m... .[35m. .[
     bcde:	31 6d 52 65 76 69 73 69 6f 6e 3a 1b 5b 30 6d 20     1mRevision:.[0m 
-    bcee:	20 20 20 20 20 66 39 37 61 38 36 38 35 35 66 33          f97a86855f3
-    bcfe:	36 61 66 38 63 62 62 31 39 38 63 64 33 63 37 30     6af8cbb198cd3c70
-    bd0e:	39 61 34 39 66 35 66 35 39 37 34 39 63 0d 0a 00     9a49f5f59749c...
+    bcee:	20 20 20 20 20 65 39 32 31 30 63 39 65 39 30 38          e9210c9e908
+    bcfe:	34 62 38 61 32 38 65 63 62 66 37 61 66 38 66 30     4b8a28ecbf7af8f0
+    bd0e:	36 66 33 36 65 37 31 35 32 39 62 65 66 0d 0a 00     6f36e71529bef...
     bd1e:	20 1b 5b 31 6d 42 72 61 6e 63 68 3a 1b 5b 30 6d      .[1mBranch:.[0m
     bd2e:	20 20 20 20 20 20 20 20 6d 61 73 74 65 72 0d 0a             master..
     bd3e:	00 20 1b 5b 31 6d 54 72 65 65 20 53 74 61 74 75     . .[1mTree Statu
     bd4e:	73 3a 1b 5b 30 6d 20 20 20 44 69 72 74 79 0d 0a     s:.[0m   Dirty..
     bd5e:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    bd6e:	4c 2f 43 4d 61 6b 65 43 61 63 68 65 2e 74 78 74     L/CMakeCache.txt
-    bd7e:	0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45     ...Keyboards/ICE
-    bd8e:	44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 33     D-L/CMakeFiles/3
-    bd9e:	2e 33 2e 31 2f 43 4d 61 6b 65 43 43 6f 6d 70 69     .3.1/CMakeCCompi
-    bdae:	6c 65 72 2e 63 6d 61 6b 65 0d 0a 09 4b 65 79 62     ler.cmake...Keyb
-    bdbe:	6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61     oards/ICED-L/CMa
-    bdce:	6b 65 46 69 6c 65 73 2f 33 2e 33 2e 31 2f 43 4d     keFiles/3.3.1/CM
-    bdde:	61 6b 65 43 58 58 43 6f 6d 70 69 6c 65 72 2e 63     akeCXXCompiler.c
-    bdee:	6d 61 6b 65 0d 0a 09 4b 65 79 62 6f 61 72 64 73     make...Keyboards
-    bdfe:	2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c     /ICED-L/CMakeFil
-    be0e:	65 73 2f 33 2e 33 2e 31 2f 43 4d 61 6b 65 53 79     es/3.3.1/CMakeSy
-    be1e:	73 74 65 6d 2e 63 6d 61 6b 65 0d 0a 09 4b 65 79     stem.cmake...Key
-    be2e:	62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d     boards/ICED-L/CM
-    be3e:	61 6b 65 46 69 6c 65 73 2f 43 4d 61 6b 65 44 69     akeFiles/CMakeDi
-    be4e:	72 65 63 74 6f 72 79 49 6e 66 6f 72 6d 61 74 69     rectoryInformati
-    be5e:	6f 6e 2e 63 6d 61 6b 65 0d 0a 09 4b 65 79 62 6f     on.cmake...Keybo
-    be6e:	61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b     ards/ICED-L/CMak
-    be7e:	65 46 69 6c 65 73 2f 43 4d 61 6b 65 4f 75 74 70     eFiles/CMakeOutp
-    be8e:	75 74 2e 6c 6f 67 0d 0a 09 4b 65 79 62 6f 61 72     ut.log...Keyboar
-    be9e:	64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46     ds/ICED-L/CMakeF
-    beae:	69 6c 65 73 2f 43 4d 61 6b 65 52 75 6c 65 48 61     iles/CMakeRuleHa
-    bebe:	73 68 65 73 2e 74 78 74 0d 0a 09 4b 65 79 62 6f     shes.txt...Keybo
-    bece:	61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b     ards/ICED-L/CMak
-    bede:	65 46 69 6c 65 73 2f 4d 61 6b 65 66 69 6c 65 2e     eFiles/Makefile.
-    beee:	63 6d 61 6b 65 0d 0a 09 4b 65 79 62 6f 61 72 64     cmake...Keyboard
-    befe:	73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46 69     s/ICED-L/CMakeFi
-    bf0e:	6c 65 73 2f 4d 61 6b 65 66 69 6c 65 32 0d 0a 09     les/Makefile2...
-    bf1e:	4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c     Keyboards/ICED-L
-    bf2e:	2f 43 4d 61 6b 65 46 69 6c 65 73 2f 53 69 7a 65     /CMakeFiles/Size
-    bf3e:	41 66 74 65 72 2e 64 69 72 2f 44 65 70 65 6e 64     After.dir/Depend
-    bf4e:	49 6e 66 6f 2e 63 6d 61 6b 65 0d 0a 09 4b 65 79     Info.cmake...Key
-    bf5e:	62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d     boards/ICED-L/CM
-    bf6e:	61 6b 65 46 69 6c 65 73 2f 53 69 7a 65 41 66 74     akeFiles/SizeAft
-    bf7e:	65 72 2e 64 69 72 2f 62 75 69 6c 64 2e 6d 61 6b     er.dir/build.mak
-    bf8e:	65 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     e...Keyboards/IC
-    bf9e:	45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-L/CMakeFiles/
-    bfae:	53 69 7a 65 41 66 74 65 72 2e 64 69 72 2f 63 6d     SizeAfter.dir/cm
-    bfbe:	61 6b 65 5f 63 6c 65 61 6e 2e 63 6d 61 6b 65 0d     ake_clean.cmake.
-    bfce:	0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44     ..Keyboards/ICED
-    bfde:	2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 53 69     -L/CMakeFiles/Si
-    bfee:	7a 65 41 66 74 65 72 2e 64 69 72 2f 64 65 70 65     zeAfter.dir/depe
-    bffe:	6e 64 2e 69 6e 74 65 72 6e 61 6c 0d 0a 09 4b 65     nd.internal...Ke
-    c00e:	79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43     yboards/ICED-L/C
-    c01e:	4d 61 6b 65 46 69 6c 65 73 2f 53 69 7a 65 41 66     MakeFiles/SizeAf
-    c02e:	74 65 72 2e 64 69 72 2f 64 65 70 65 6e 64 2e 6d     ter.dir/depend.m
-    c03e:	61 6b 65 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f     ake...Keyboards/
-    c04e:	49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65     ICED-L/CMakeFile
-    c05e:	73 2f 53 69 7a 65 41 66 74 65 72 2e 64 69 72 2f     s/SizeAfter.dir/
-    c06e:	70 72 6f 67 72 65 73 73 2e 6d 61 6b 65 0d 0a 09     progress.make...
-    c07e:	4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c     Keyboards/ICED-L
-    c08e:	2f 43 4d 61 6b 65 46 69 6c 65 73 2f 54 61 72 67     /CMakeFiles/Targ
-    c09e:	65 74 44 69 72 65 63 74 6f 72 69 65 73 2e 74 78     etDirectories.tx
-    c0ae:	74 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     t...Keyboards/IC
-    c0be:	45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-L/CMakeFiles/
-    c0ce:	63 6d 61 6b 65 2e 63 68 65 63 6b 5f 63 61 63 68     cmake.check_cach
-    c0de:	65 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     e...Keyboards/IC
-    c0ee:	45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-L/CMakeFiles/
-    c0fe:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
-    c10e:	43 2e 69 6e 63 6c 75 64 65 63 61 63 68 65 0d 0a     C.includecache..
+    bd6e:	4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69     L/CMakeFiles/kii
+    bd7e:	62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 44 65 62     bohd.elf.dir/Deb
+    bd8e:	75 67 2f 63 6c 69 2f 63 6c 69 2e 63 2e 6f 0d 0a     ug/cli/cli.c.o..
+    bd9e:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
+    bdae:	4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69     L/CMakeFiles/kii
+    bdbe:	62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4d 61 63     bohd.elf.dir/Mac
+    bdce:	72 6f 2f 50 61 72 74 69 61 6c 4d 61 70 2f 6d 61     ro/PartialMap/ma
+    bdde:	63 72 6f 2e 63 2e 6f 0d 0a 09 4b 65 79 62 6f 61     cro.c.o...Keyboa
+    bdee:	72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65     rds/ICED-L/CMake
+    bdfe:	46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c     Files/kiibohd.el
+    be0e:	66 2e 64 69 72 2f 4d 61 63 72 6f 2f 50 61 72 74     f.dir/Macro/Part
+    be1e:	69 61 6c 4d 61 70 2f 72 65 73 75 6c 74 2e 63 2e     ialMap/result.c.
+    be2e:	6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     o...Keyboards/IC
+    be3e:	45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-L/CMakeFiles/
+    be4e:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
+    be5e:	4d 61 63 72 6f 2f 50 61 72 74 69 61 6c 4d 61 70     Macro/PartialMap
+    be6e:	2f 74 72 69 67 67 65 72 2e 63 2e 6f 0d 0a 09 4b     /trigger.c.o...K
+    be7e:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f     eyboards/ICED-L/
+    be8e:	43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f     CMakeFiles/kiibo
+    be9e:	68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75 74 70 75     hd.elf.dir/Outpu
+    beae:	74 2f 70 6a 72 63 55 53 42 2f 61 72 6d 2f 75 73     t/pjrcUSB/arm/us
+    bebe:	62 5f 64 65 73 63 2e 63 2e 6f 0d 0a 09 4b 65 79     b_desc.c.o...Key
+    bece:	62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d     boards/ICED-L/CM
+    bede:	61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64     akeFiles/kiibohd
+    beee:	2e 65 6c 66 2e 64 69 72 2f 4f 75 74 70 75 74 2f     .elf.dir/Output/
+    befe:	70 6a 72 63 55 53 42 2f 61 72 6d 2f 75 73 62 5f     pjrcUSB/arm/usb_
+    bf0e:	64 65 76 2e 63 2e 6f 0d 0a 09 4b 65 79 62 6f 61     dev.c.o...Keyboa
+    bf1e:	72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65     rds/ICED-L/CMake
+    bf2e:	46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c     Files/kiibohd.el
+    bf3e:	66 2e 64 69 72 2f 4f 75 74 70 75 74 2f 70 6a 72     f.dir/Output/pjr
+    bf4e:	63 55 53 42 2f 6f 75 74 70 75 74 5f 63 6f 6d 2e     cUSB/output_com.
+    bf5e:	63 2e 6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f     c.o...Keyboards/
+    bf6e:	49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65     ICED-L/CMakeFile
+    bf7e:	73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69     s/kiibohd.elf.di
+    bf8e:	72 2f 53 63 61 6e 2f 49 53 53 49 4c 65 64 2f 6c     r/Scan/ISSILed/l
+    bf9e:	65 64 5f 73 63 61 6e 2e 63 2e 6f 0d 0a 09 4b 65     ed_scan.c.o...Ke
+    bfae:	79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43     yboards/ICED-L/C
+    bfbe:	4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68     MakeFiles/kiiboh
+    bfce:	64 2e 65 6c 66 2e 64 69 72 2f 53 63 61 6e 2f 4d     d.elf.dir/Scan/M
+    bfde:	61 74 72 69 78 41 52 4d 2f 6d 61 74 72 69 78 5f     atrixARM/matrix_
+    bfee:	73 63 61 6e 2e 63 2e 6f 0d 0a 09 4b 65 79 62 6f     scan.c.o...Keybo
+    bffe:	61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b     ards/ICED-L/CMak
+    c00e:	65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65     eFiles/kiibohd.e
+    c01e:	6c 66 2e 64 69 72 2f 53 63 61 6e 2f 53 54 4c 63     lf.dir/Scan/STLc
+    c02e:	64 2f 6c 63 64 5f 73 63 61 6e 2e 63 2e 6f 0d 0a     d/lcd_scan.c.o..
+    c03e:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
+    c04e:	4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69     L/CMakeFiles/kii
+    c05e:	62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 53 63 61     bohd.elf.dir/Sca
+    c06e:	6e 2f 55 41 52 54 43 6f 6e 6e 65 63 74 2f 63 6f     n/UARTConnect/co
+    c07e:	6e 6e 65 63 74 5f 73 63 61 6e 2e 63 2e 6f 0d 0a     nnect_scan.c.o..
+    c08e:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
+    c09e:	4c 2f 4d 44 45 72 67 6f 31 2d 44 65 66 61 75 6c     L/MDErgo1-Defaul
+    c0ae:	74 2d 30 2e 6b 6c 6c 0d 0a 09 4b 65 79 62 6f 61     t-0.kll...Keyboa
+    c0be:	72 64 73 2f 49 43 45 44 2d 4c 2f 62 75 69 6c 64     rds/ICED-L/build
+    c0ce:	76 61 72 73 2e 68 0d 0a 09 4b 65 79 62 6f 61 72     vars.h...Keyboar
+    c0de:	64 73 2f 49 43 45 44 2d 4c 2f 67 65 6e 65 72 61     ds/ICED-L/genera
+    c0ee:	74 65 64 4b 65 79 6d 61 70 2e 68 0d 0a 09 4b 65     tedKeymap.h...Ke
+    c0fe:	79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 6b     yboards/ICED-L/k
+    c10e:	69 69 62 6f 68 64 2e 64 66 75 2e 62 69 6e 0d 0a     iibohd.dfu.bin..
     c11e:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    c12e:	4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69     L/CMakeFiles/kii
-    c13e:	62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 44 65 62     bohd.elf.dir/Deb
-    c14e:	75 67 2f 63 6c 69 2f 63 6c 69 2e 63 2e 64 0d 0a     ug/cli/cli.c.d..
-    c15e:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    c16e:	4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69     L/CMakeFiles/kii
-    c17e:	62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 44 65 62     bohd.elf.dir/Deb
-    c18e:	75 67 2f 63 6c 69 2f 63 6c 69 2e 63 2e 6f 0d 0a     ug/cli/cli.c.o..
-    c19e:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    c1ae:	4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69     L/CMakeFiles/kii
-    c1be:	62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 44 65 62     bohd.elf.dir/Deb
-    c1ce:	75 67 2f 6c 65 64 2f 6c 65 64 2e 63 2e 64 0d 0a     ug/led/led.c.d..
-    c1de:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    c1ee:	4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69     L/CMakeFiles/kii
-    c1fe:	62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 44 65 62     bohd.elf.dir/Deb
-    c20e:	75 67 2f 6c 65 64 2f 6c 65 64 2e 63 2e 6f 0d 0a     ug/led/led.c.o..
-    c21e:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    c22e:	4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69     L/CMakeFiles/kii
-    c23e:	62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 44 65 62     bohd.elf.dir/Deb
-    c24e:	75 67 2f 70 72 69 6e 74 2f 70 72 69 6e 74 2e 63     ug/print/print.c
-    c25e:	2e 64 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49     .d...Keyboards/I
-    c26e:	43 45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73     CED-L/CMakeFiles
-    c27e:	2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72     /kiibohd.elf.dir
-    c28e:	2f 44 65 62 75 67 2f 70 72 69 6e 74 2f 70 72 69     /Debug/print/pri
-    c29e:	6e 74 2e 63 2e 6f 0d 0a 09 4b 65 79 62 6f 61 72     nt.c.o...Keyboar
-    c2ae:	64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46     ds/ICED-L/CMakeF
-    c2be:	69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66     iles/kiibohd.elf
-    c2ce:	2e 64 69 72 2f 44 65 70 65 6e 64 49 6e 66 6f 2e     .dir/DependInfo.
-    c2de:	63 6d 61 6b 65 0d 0a 09 4b 65 79 62 6f 61 72 64     cmake...Keyboard
-    c2ee:	73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46 69     s/ICED-L/CMakeFi
-    c2fe:	6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e     les/kiibohd.elf.
-    c30e:	64 69 72 2f 4c 69 62 2f 64 65 6c 61 79 2e 63 2e     dir/Lib/delay.c.
-    c31e:	64 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     d...Keyboards/IC
-    c32e:	45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-L/CMakeFiles/
-    c33e:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
-    c34e:	4c 69 62 2f 64 65 6c 61 79 2e 63 2e 6f 0d 0a 09     Lib/delay.c.o...
-    c35e:	4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c     Keyboards/ICED-L
-    c36e:	2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62     /CMakeFiles/kiib
-    c37e:	6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4c 69 62 2f     ohd.elf.dir/Lib/
-    c38e:	6d 6b 32 30 64 78 2e 63 2e 64 0d 0a 09 4b 65 79     mk20dx.c.d...Key
-    c39e:	62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d     boards/ICED-L/CM
-    c3ae:	61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64     akeFiles/kiibohd
-    c3be:	2e 65 6c 66 2e 64 69 72 2f 4c 69 62 2f 6d 6b 32     .elf.dir/Lib/mk2
-    c3ce:	30 64 78 2e 63 2e 6f 0d 0a 09 4b 65 79 62 6f 61     0dx.c.o...Keyboa
-    c3de:	72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65     rds/ICED-L/CMake
-    c3ee:	46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c     Files/kiibohd.el
-    c3fe:	66 2e 64 69 72 2f 4d 61 63 72 6f 2f 50 61 72 74     f.dir/Macro/Part
-    c40e:	69 61 6c 4d 61 70 2f 6d 61 63 72 6f 2e 63 2e 64     ialMap/macro.c.d
-    c41e:	0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45     ...Keyboards/ICE
-    c42e:	44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b     D-L/CMakeFiles/k
-    c43e:	69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4d     iibohd.elf.dir/M
-    c44e:	61 63 72 6f 2f 50 61 72 74 69 61 6c 4d 61 70 2f     acro/PartialMap/
-    c45e:	6d 61 63 72 6f 2e 63 2e 6f 0d 0a 09 4b 65 79 62     macro.c.o...Keyb
-    c46e:	6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61     oards/ICED-L/CMa
-    c47e:	6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e     keFiles/kiibohd.
-    c48e:	65 6c 66 2e 64 69 72 2f 4d 61 63 72 6f 2f 50 61     elf.dir/Macro/Pa
-    c49e:	72 74 69 61 6c 4d 61 70 2f 72 65 73 75 6c 74 2e     rtialMap/result.
-    c4ae:	63 2e 64 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f     c.d...Keyboards/
-    c4be:	49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65     ICED-L/CMakeFile
-    c4ce:	73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69     s/kiibohd.elf.di
-    c4de:	72 2f 4d 61 63 72 6f 2f 50 61 72 74 69 61 6c 4d     r/Macro/PartialM
-    c4ee:	61 70 2f 72 65 73 75 6c 74 2e 63 2e 6f 0d 0a 09     ap/result.c.o...
-    c4fe:	4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c     Keyboards/ICED-L
-    c50e:	2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62     /CMakeFiles/kiib
-    c51e:	6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4d 61 63 72     ohd.elf.dir/Macr
-    c52e:	6f 2f 50 61 72 74 69 61 6c 4d 61 70 2f 74 72 69     o/PartialMap/tri
-    c53e:	67 67 65 72 2e 63 2e 64 0d 0a 09 4b 65 79 62 6f     gger.c.d...Keybo
-    c54e:	61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b     ards/ICED-L/CMak
-    c55e:	65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65     eFiles/kiibohd.e
-    c56e:	6c 66 2e 64 69 72 2f 4d 61 63 72 6f 2f 50 61 72     lf.dir/Macro/Par
-    c57e:	74 69 61 6c 4d 61 70 2f 74 72 69 67 67 65 72 2e     tialMap/trigger.
-    c58e:	63 2e 6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f     c.o...Keyboards/
-    c59e:	49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65     ICED-L/CMakeFile
-    c5ae:	73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69     s/kiibohd.elf.di
-    c5be:	72 2f 4f 75 74 70 75 74 2f 70 6a 72 63 55 53 42     r/Output/pjrcUSB
-    c5ce:	2f 61 72 6d 2f 75 73 62 5f 64 65 73 63 2e 63 2e     /arm/usb_desc.c.
-    c5de:	64 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     d...Keyboards/IC
-    c5ee:	45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-L/CMakeFiles/
-    c5fe:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
-    c60e:	4f 75 74 70 75 74 2f 70 6a 72 63 55 53 42 2f 61     Output/pjrcUSB/a
-    c61e:	72 6d 2f 75 73 62 5f 64 65 73 63 2e 63 2e 6f 0d     rm/usb_desc.c.o.
-    c62e:	0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44     ..Keyboards/ICED
-    c63e:	2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69     -L/CMakeFiles/ki
-    c64e:	69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75     ibohd.elf.dir/Ou
-    c65e:	74 70 75 74 2f 70 6a 72 63 55 53 42 2f 61 72 6d     tput/pjrcUSB/arm
-    c66e:	2f 75 73 62 5f 64 65 76 2e 63 2e 64 0d 0a 09 4b     /usb_dev.c.d...K
-    c67e:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f     eyboards/ICED-L/
-    c68e:	43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f     CMakeFiles/kiibo
-    c69e:	68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75 74 70 75     hd.elf.dir/Outpu
-    c6ae:	74 2f 70 6a 72 63 55 53 42 2f 61 72 6d 2f 75 73     t/pjrcUSB/arm/us
-    c6be:	62 5f 64 65 76 2e 63 2e 6f 0d 0a 09 4b 65 79 62     b_dev.c.o...Keyb
-    c6ce:	6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61     oards/ICED-L/CMa
-    c6de:	6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e     keFiles/kiibohd.
-    c6ee:	65 6c 66 2e 64 69 72 2f 4f 75 74 70 75 74 2f 70     elf.dir/Output/p
-    c6fe:	6a 72 63 55 53 42 2f 61 72 6d 2f 75 73 62 5f 6a     jrcUSB/arm/usb_j
-    c70e:	6f 79 73 74 69 63 6b 2e 63 2e 64 0d 0a 09 4b 65     oystick.c.d...Ke
-    c71e:	79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43     yboards/ICED-L/C
-    c72e:	4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68     MakeFiles/kiiboh
-    c73e:	64 2e 65 6c 66 2e 64 69 72 2f 4f 75 74 70 75 74     d.elf.dir/Output
-    c74e:	2f 70 6a 72 63 55 53 42 2f 61 72 6d 2f 75 73 62     /pjrcUSB/arm/usb
-    c75e:	5f 6a 6f 79 73 74 69 63 6b 2e 63 2e 6f 0d 0a 09     _joystick.c.o...
-    c76e:	4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c     Keyboards/ICED-L
-    c77e:	2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62     /CMakeFiles/kiib
-    c78e:	6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75 74 70     ohd.elf.dir/Outp
-    c79e:	75 74 2f 70 6a 72 63 55 53 42 2f 61 72 6d 2f 75     ut/pjrcUSB/arm/u
-    c7ae:	73 62 5f 6b 65 79 62 6f 61 72 64 2e 63 2e 64 0d     sb_keyboard.c.d.
-    c7be:	0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44     ..Keyboards/ICED
-    c7ce:	2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69     -L/CMakeFiles/ki
-    c7de:	69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75     ibohd.elf.dir/Ou
-    c7ee:	74 70 75 74 2f 70 6a 72 63 55 53 42 2f 61 72 6d     tput/pjrcUSB/arm
-    c7fe:	2f 75 73 62 5f 6b 65 79 62 6f 61 72 64 2e 63 2e     /usb_keyboard.c.
-    c80e:	6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     o...Keyboards/IC
-    c81e:	45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-L/CMakeFiles/
-    c82e:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
-    c83e:	4f 75 74 70 75 74 2f 70 6a 72 63 55 53 42 2f 61     Output/pjrcUSB/a
-    c84e:	72 6d 2f 75 73 62 5f 6d 65 6d 2e 63 2e 64 0d 0a     rm/usb_mem.c.d..
-    c85e:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    c86e:	4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69     L/CMakeFiles/kii
-    c87e:	62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75 74     bohd.elf.dir/Out
-    c88e:	70 75 74 2f 70 6a 72 63 55 53 42 2f 61 72 6d 2f     put/pjrcUSB/arm/
-    c89e:	75 73 62 5f 6d 65 6d 2e 63 2e 6f 0d 0a 09 4b 65     usb_mem.c.o...Ke
-    c8ae:	79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43     yboards/ICED-L/C
-    c8be:	4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68     MakeFiles/kiiboh
-    c8ce:	64 2e 65 6c 66 2e 64 69 72 2f 4f 75 74 70 75 74     d.elf.dir/Output
-    c8de:	2f 70 6a 72 63 55 53 42 2f 61 72 6d 2f 75 73 62     /pjrcUSB/arm/usb
-    c8ee:	5f 6d 6f 75 73 65 2e 63 2e 64 0d 0a 09 4b 65 79     _mouse.c.d...Key
-    c8fe:	62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d     boards/ICED-L/CM
-    c90e:	61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64     akeFiles/kiibohd
-    c91e:	2e 65 6c 66 2e 64 69 72 2f 4f 75 74 70 75 74 2f     .elf.dir/Output/
-    c92e:	70 6a 72 63 55 53 42 2f 61 72 6d 2f 75 73 62 5f     pjrcUSB/arm/usb_
-    c93e:	6d 6f 75 73 65 2e 63 2e 6f 0d 0a 09 4b 65 79 62     mouse.c.o...Keyb
-    c94e:	6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61     oards/ICED-L/CMa
-    c95e:	6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e     keFiles/kiibohd.
-    c96e:	65 6c 66 2e 64 69 72 2f 4f 75 74 70 75 74 2f 70     elf.dir/Output/p
-    c97e:	6a 72 63 55 53 42 2f 61 72 6d 2f 75 73 62 5f 73     jrcUSB/arm/usb_s
-    c98e:	65 72 69 61 6c 2e 63 2e 64 0d 0a 09 4b 65 79 62     erial.c.d...Keyb
-    c99e:	6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61     oards/ICED-L/CMa
-    c9ae:	6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e     keFiles/kiibohd.
-    c9be:	65 6c 66 2e 64 69 72 2f 4f 75 74 70 75 74 2f 70     elf.dir/Output/p
-    c9ce:	6a 72 63 55 53 42 2f 61 72 6d 2f 75 73 62 5f 73     jrcUSB/arm/usb_s
-    c9de:	65 72 69 61 6c 2e 63 2e 6f 0d 0a 09 4b 65 79 62     erial.c.o...Keyb
-    c9ee:	6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61     oards/ICED-L/CMa
-    c9fe:	6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e     keFiles/kiibohd.
-    ca0e:	65 6c 66 2e 64 69 72 2f 4f 75 74 70 75 74 2f 70     elf.dir/Output/p
-    ca1e:	6a 72 63 55 53 42 2f 6f 75 74 70 75 74 5f 63 6f     jrcUSB/output_co
-    ca2e:	6d 2e 63 2e 64 0d 0a 09 4b 65 79 62 6f 61 72 64     m.c.d...Keyboard
-    ca3e:	73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46 69     s/ICED-L/CMakeFi
-    ca4e:	6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e     les/kiibohd.elf.
-    ca5e:	64 69 72 2f 4f 75 74 70 75 74 2f 70 6a 72 63 55     dir/Output/pjrcU
-    ca6e:	53 42 2f 6f 75 74 70 75 74 5f 63 6f 6d 2e 63 2e     SB/output_com.c.
-    ca7e:	6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     o...Keyboards/IC
-    ca8e:	45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-L/CMakeFiles/
-    ca9e:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
-    caae:	53 63 61 6e 2f 49 53 53 49 4c 65 64 2f 6c 65 64     Scan/ISSILed/led
-    cabe:	5f 73 63 61 6e 2e 63 2e 64 0d 0a 09 4b 65 79 62     _scan.c.d...Keyb
-    cace:	6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61     oards/ICED-L/CMa
-    cade:	6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e     keFiles/kiibohd.
-    caee:	65 6c 66 2e 64 69 72 2f 53 63 61 6e 2f 49 53 53     elf.dir/Scan/ISS
-    cafe:	49 4c 65 64 2f 6c 65 64 5f 73 63 61 6e 2e 63 2e     ILed/led_scan.c.
-    cb0e:	6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     o...Keyboards/IC
-    cb1e:	45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-L/CMakeFiles/
-    cb2e:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
-    cb3e:	53 63 61 6e 2f 4d 44 45 72 67 6f 31 2d 43 75 73     Scan/MDErgo1-Cus
-    cb4e:	74 6f 6d 4c 6f 67 6f 2f 73 63 61 6e 5f 6c 6f 6f     tomLogo/scan_loo
-    cb5e:	70 2e 63 2e 64 0d 0a 09 4b 65 79 62 6f 61 72 64     p.c.d...Keyboard
-    cb6e:	73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46 69     s/ICED-L/CMakeFi
-    cb7e:	6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e     les/kiibohd.elf.
-    cb8e:	64 69 72 2f 53 63 61 6e 2f 4d 44 45 72 67 6f 31     dir/Scan/MDErgo1
-    cb9e:	2d 43 75 73 74 6f 6d 4c 6f 67 6f 2f 73 63 61 6e     -CustomLogo/scan
-    cbae:	5f 6c 6f 6f 70 2e 63 2e 6f 0d 0a 09 4b 65 79 62     _loop.c.o...Keyb
-    cbbe:	6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61     oards/ICED-L/CMa
-    cbce:	6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e     keFiles/kiibohd.
-    cbde:	65 6c 66 2e 64 69 72 2f 53 63 61 6e 2f 4d 61 74     elf.dir/Scan/Mat
-    cbee:	72 69 78 41 52 4d 2f 6d 61 74 72 69 78 5f 73 63     rixARM/matrix_sc
-    cbfe:	61 6e 2e 63 2e 64 0d 0a 09 4b 65 79 62 6f 61 72     an.c.d...Keyboar
-    cc0e:	64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46     ds/ICED-L/CMakeF
-    cc1e:	69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66     iles/kiibohd.elf
-    cc2e:	2e 64 69 72 2f 53 63 61 6e 2f 4d 61 74 72 69 78     .dir/Scan/Matrix
-    cc3e:	41 52 4d 2f 6d 61 74 72 69 78 5f 73 63 61 6e 2e     ARM/matrix_scan.
-    cc4e:	63 2e 6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f     c.o...Keyboards/
-    cc5e:	49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65     ICED-L/CMakeFile
-    cc6e:	73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69     s/kiibohd.elf.di
-    cc7e:	72 2f 53 63 61 6e 2f 53 54 4c 63 64 2f 6c 63 64     r/Scan/STLcd/lcd
-    cc8e:	5f 73 63 61 6e 2e 63 2e 64 0d 0a 09 4b 65 79 62     _scan.c.d...Keyb
-    cc9e:	6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61     oards/ICED-L/CMa
-    ccae:	6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e     keFiles/kiibohd.
-    ccbe:	65 6c 66 2e 64 69 72 2f 53 63 61 6e 2f 53 54 4c     elf.dir/Scan/STL
-    ccce:	63 64 2f 6c 63 64 5f 73 63 61 6e 2e 63 2e 6f 0d     cd/lcd_scan.c.o.
-    ccde:	0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44     ..Keyboards/ICED
-    ccee:	2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69     -L/CMakeFiles/ki
-    ccfe:	69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 53 63     ibohd.elf.dir/Sc
-    cd0e:	61 6e 2f 55 41 52 54 43 6f 6e 6e 65 63 74 2f 63     an/UARTConnect/c
-    cd1e:	6f 6e 6e 65 63 74 5f 73 63 61 6e 2e 63 2e 64 0d     onnect_scan.c.d.
-    cd2e:	0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44     ..Keyboards/ICED
-    cd3e:	2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69     -L/CMakeFiles/ki
-    cd4e:	69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 53 63     ibohd.elf.dir/Sc
-    cd5e:	61 6e 2f 55 41 52 54 43 6f 6e 6e 65 63 74 2f 63     an/UARTConnect/c
-    cd6e:	6f 6e 6e 65 63 74 5f 73 63 61 6e 2e 63 2e 6f 0d     onnect_scan.c.o.
-    cd7e:	0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44     ..Keyboards/ICED
-    cd8e:	2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69     -L/CMakeFiles/ki
-    cd9e:	69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 62 75     ibohd.elf.dir/bu
-    cdae:	69 6c 64 2e 6d 61 6b 65 0d 0a 09 4b 65 79 62 6f     ild.make...Keybo
-    cdbe:	61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b     ards/ICED-L/CMak
-    cdce:	65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65     eFiles/kiibohd.e
-    cdde:	6c 66 2e 64 69 72 2f 63 6d 61 6b 65 5f 63 6c 65     lf.dir/cmake_cle
-    cdee:	61 6e 2e 63 6d 61 6b 65 0d 0a 09 4b 65 79 62 6f     an.cmake...Keybo
-    cdfe:	61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b     ards/ICED-L/CMak
-    ce0e:	65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65     eFiles/kiibohd.e
-    ce1e:	6c 66 2e 64 69 72 2f 64 65 70 65 6e 64 2e 69 6e     lf.dir/depend.in
-    ce2e:	74 65 72 6e 61 6c 0d 0a 09 4b 65 79 62 6f 61 72     ternal...Keyboar
-    ce3e:	64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46     ds/ICED-L/CMakeF
-    ce4e:	69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66     iles/kiibohd.elf
-    ce5e:	2e 64 69 72 2f 64 65 70 65 6e 64 2e 6d 61 6b 65     .dir/depend.make
-    ce6e:	0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45     ...Keyboards/ICE
-    ce7e:	44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b     D-L/CMakeFiles/k
-    ce8e:	69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 66     iibohd.elf.dir/f
-    ce9e:	6c 61 67 73 2e 6d 61 6b 65 0d 0a 09 4b 65 79 62     lags.make...Keyb
-    ceae:	6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61     oards/ICED-L/CMa
-    cebe:	6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e     keFiles/kiibohd.
-    cece:	65 6c 66 2e 64 69 72 2f 6c 69 6e 6b 2e 74 78 74     elf.dir/link.txt
-    cede:	0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45     ...Keyboards/ICE
-    ceee:	44 2d 4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b     D-L/CMakeFiles/k
-    cefe:	69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 6d     iibohd.elf.dir/m
-    cf0e:	61 69 6e 2e 63 2e 64 0d 0a 09 4b 65 79 62 6f 61     ain.c.d...Keyboa
-    cf1e:	72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65     rds/ICED-L/CMake
-    cf2e:	46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c     Files/kiibohd.el
-    cf3e:	66 2e 64 69 72 2f 6d 61 69 6e 2e 63 2e 6f 0d 0a     f.dir/main.c.o..
-    cf4e:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    cf5e:	4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69     L/CMakeFiles/kii
-    cf6e:	62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 70 72 6f     bohd.elf.dir/pro
-    cf7e:	67 72 65 73 73 2e 6d 61 6b 65 0d 0a 09 4b 65 79     gress.make...Key
-    cf8e:	62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d     boards/ICED-L/CM
-    cf9e:	61 6b 65 46 69 6c 65 73 2f 6b 6c 6c 5f 72 65 67     akeFiles/kll_reg
-    cfae:	65 6e 2e 64 69 72 2f 44 65 70 65 6e 64 49 6e 66     en.dir/DependInf
-    cfbe:	6f 2e 63 6d 61 6b 65 0d 0a 09 4b 65 79 62 6f 61     o.cmake...Keyboa
-    cfce:	72 64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65     rds/ICED-L/CMake
-    cfde:	46 69 6c 65 73 2f 6b 6c 6c 5f 72 65 67 65 6e 2e     Files/kll_regen.
-    cfee:	64 69 72 2f 62 75 69 6c 64 2e 6d 61 6b 65 0d 0a     dir/build.make..
-    cffe:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    d00e:	4c 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 6c 6c     L/CMakeFiles/kll
-    d01e:	5f 72 65 67 65 6e 2e 64 69 72 2f 63 6d 61 6b 65     _regen.dir/cmake
-    d02e:	5f 63 6c 65 61 6e 2e 63 6d 61 6b 65 0d 0a 09 4b     _clean.cmake...K
-    d03e:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f     eyboards/ICED-L/
-    d04e:	43 4d 61 6b 65 46 69 6c 65 73 2f 6b 6c 6c 5f 72     CMakeFiles/kll_r
-    d05e:	65 67 65 6e 2e 64 69 72 2f 70 72 6f 67 72 65 73     egen.dir/progres
-    d06e:	73 2e 6d 61 6b 65 0d 0a 09 4b 65 79 62 6f 61 72     s.make...Keyboar
-    d07e:	64 73 2f 49 43 45 44 2d 4c 2f 43 4d 61 6b 65 46     ds/ICED-L/CMakeF
-    d08e:	69 6c 65 73 2f 70 72 6f 67 72 65 73 73 2e 6d 61     iles/progress.ma
-    d09e:	72 6b 73 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f     rks...Keyboards/
-    d0ae:	49 43 45 44 2d 4c 2f 4d 61 6b 65 66 69 6c 65 0d     ICED-L/Makefile.
-    d0be:	0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44     ..Keyboards/ICED
-    d0ce:	2d 4c 2f 62 75 69 6c 64 76 61 72 73 2e 68 0d 0a     -L/buildvars.h..
-    d0de:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    d0ee:	4c 2f 63 6d 61 6b 65 5f 69 6e 73 74 61 6c 6c 2e     L/cmake_install.
-    d0fe:	63 6d 61 6b 65 0d 0a 09 4b 65 79 62 6f 61 72 64     cmake...Keyboard
-    d10e:	73 2f 49 43 45 44 2d 4c 2f 63 6f 6d 70 69 6c 65     s/ICED-L/compile
-    d11e:	5f 63 6f 6d 6d 61 6e 64 73 2e 6a 73 6f 6e 0d 0a     _commands.json..
-    d12e:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    d13e:	4c 2f 63 6f 6d 70 69 6c 65 72 0d 0a 09 4b 65 79     L/compiler...Key
-    d14e:	62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 67 65     boards/ICED-L/ge
-    d15e:	6e 65 72 61 74 65 64 4b 65 79 6d 61 70 2e 68 0d     neratedKeymap.h.
-    d16e:	0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44     ..Keyboards/ICED
-    d17e:	2d 4c 2f 6b 69 69 62 6f 68 64 2e 64 66 75 2e 62     -L/kiibohd.dfu.b
-    d18e:	69 6e 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49     in...Keyboards/I
-    d19e:	43 45 44 2d 4c 2f 6b 69 69 62 6f 68 64 2e 65 6c     CED-L/kiibohd.el
-    d1ae:	66 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     f...Keyboards/IC
-    d1be:	45 44 2d 4c 2f 6b 69 69 62 6f 68 64 2e 6c 73 73     ED-L/kiibohd.lss
-    d1ce:	0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45     ...Keyboards/ICE
-    d1de:	44 2d 4c 2f 6b 69 69 62 6f 68 64 2e 73 79 6d 0d     D-L/kiibohd.sym.
-    d1ee:	0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44     ..Keyboards/ICED
-    d1fe:	2d 4c 2f 6b 6c 6c 5f 64 65 66 73 2e 68 0d 0a 09     -L/kll_defs.h...
-    d20e:	4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c     Keyboards/ICED-L
-    d21e:	2f 6c 69 6e 6b 2e 6d 61 70 0d 0a 09 4b 65 79 62     /link.map...Keyb
-    d22e:	6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 6c 6f 61     oards/ICED-L/loa
-    d23e:	64 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     d...Keyboards/IC
-    d24e:	45 44 2d 52 2f 43 4d 61 6b 65 43 61 63 68 65 2e     ED-R/CMakeCache.
-    d25e:	74 78 74 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f     txt...Keyboards/
-    d26e:	49 43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65     ICED-R/CMakeFile
-    d27e:	73 2f 33 2e 33 2e 31 2f 43 4d 61 6b 65 43 43 6f     s/3.3.1/CMakeCCo
-    d28e:	6d 70 69 6c 65 72 2e 63 6d 61 6b 65 0d 0a 09 4b     mpiler.cmake...K
-    d29e:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f     eyboards/ICED-R/
-    d2ae:	43 4d 61 6b 65 46 69 6c 65 73 2f 33 2e 33 2e 31     CMakeFiles/3.3.1
-    d2be:	2f 43 4d 61 6b 65 43 58 58 43 6f 6d 70 69 6c 65     /CMakeCXXCompile
-    d2ce:	72 2e 63 6d 61 6b 65 0d 0a 09 4b 65 79 62 6f 61     r.cmake...Keyboa
-    d2de:	72 64 73 2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65     rds/ICED-R/CMake
-    d2ee:	46 69 6c 65 73 2f 33 2e 33 2e 31 2f 43 4d 61 6b     Files/3.3.1/CMak
-    d2fe:	65 53 79 73 74 65 6d 2e 63 6d 61 6b 65 0d 0a 09     eSystem.cmake...
-    d30e:	4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52     Keyboards/ICED-R
-    d31e:	2f 43 4d 61 6b 65 46 69 6c 65 73 2f 43 4d 61 6b     /CMakeFiles/CMak
-    d32e:	65 44 69 72 65 63 74 6f 72 79 49 6e 66 6f 72 6d     eDirectoryInform
-    d33e:	61 74 69 6f 6e 2e 63 6d 61 6b 65 0d 0a 09 4b 65     ation.cmake...Ke
-    d34e:	79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f 43     yboards/ICED-R/C
-    d35e:	4d 61 6b 65 46 69 6c 65 73 2f 43 4d 61 6b 65 4f     MakeFiles/CMakeO
-    d36e:	75 74 70 75 74 2e 6c 6f 67 0d 0a 09 4b 65 79 62     utput.log...Keyb
-    d37e:	6f 61 72 64 73 2f 49 43 45 44 2d 52 2f 43 4d 61     oards/ICED-R/CMa
-    d38e:	6b 65 46 69 6c 65 73 2f 43 4d 61 6b 65 52 75 6c     keFiles/CMakeRul
-    d39e:	65 48 61 73 68 65 73 2e 74 78 74 0d 0a 09 4b 65     eHashes.txt...Ke
-    d3ae:	79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f 43     yboards/ICED-R/C
-    d3be:	4d 61 6b 65 46 69 6c 65 73 2f 4d 61 6b 65 66 69     MakeFiles/Makefi
-    d3ce:	6c 65 2e 63 6d 61 6b 65 0d 0a 09 4b 65 79 62 6f     le.cmake...Keybo
-    d3de:	61 72 64 73 2f 49 43 45 44 2d 52 2f 43 4d 61 6b     ards/ICED-R/CMak
-    d3ee:	65 46 69 6c 65 73 2f 4d 61 6b 65 66 69 6c 65 32     eFiles/Makefile2
-    d3fe:	0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45     ...Keyboards/ICE
-    d40e:	44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 53     D-R/CMakeFiles/S
-    d41e:	69 7a 65 41 66 74 65 72 2e 64 69 72 2f 44 65 70     izeAfter.dir/Dep
-    d42e:	65 6e 64 49 6e 66 6f 2e 63 6d 61 6b 65 0d 0a 09     endInfo.cmake...
-    d43e:	4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52     Keyboards/ICED-R
-    d44e:	2f 43 4d 61 6b 65 46 69 6c 65 73 2f 53 69 7a 65     /CMakeFiles/Size
-    d45e:	41 66 74 65 72 2e 64 69 72 2f 62 75 69 6c 64 2e     After.dir/build.
-    d46e:	6d 61 6b 65 0d 0a 09 4b 65 79 62 6f 61 72 64 73     make...Keyboards
-    d47e:	2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c     /ICED-R/CMakeFil
-    d48e:	65 73 2f 53 69 7a 65 41 66 74 65 72 2e 64 69 72     es/SizeAfter.dir
-    d49e:	2f 63 6d 61 6b 65 5f 63 6c 65 61 6e 2e 63 6d 61     /cmake_clean.cma
-    d4ae:	6b 65 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49     ke...Keyboards/I
-    d4be:	43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73     CED-R/CMakeFiles
-    d4ce:	2f 53 69 7a 65 41 66 74 65 72 2e 64 69 72 2f 64     /SizeAfter.dir/d
-    d4de:	65 70 65 6e 64 2e 69 6e 74 65 72 6e 61 6c 0d 0a     epend.internal..
-    d4ee:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    d4fe:	52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 53 69 7a     R/CMakeFiles/Siz
-    d50e:	65 41 66 74 65 72 2e 64 69 72 2f 64 65 70 65 6e     eAfter.dir/depen
-    d51e:	64 2e 6d 61 6b 65 0d 0a 09 4b 65 79 62 6f 61 72     d.make...Keyboar
-    d52e:	64 73 2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65 46     ds/ICED-R/CMakeF
-    d53e:	69 6c 65 73 2f 53 69 7a 65 41 66 74 65 72 2e 64     iles/SizeAfter.d
-    d54e:	69 72 2f 70 72 6f 67 72 65 73 73 2e 6d 61 6b 65     ir/progress.make
-    d55e:	0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45     ...Keyboards/ICE
-    d56e:	44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 54     D-R/CMakeFiles/T
-    d57e:	61 72 67 65 74 44 69 72 65 63 74 6f 72 69 65 73     argetDirectories
-    d58e:	2e 74 78 74 0d 0a 09 4b 65 79 62 6f 61 72 64 73     .txt...Keyboards
-    d59e:	2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c     /ICED-R/CMakeFil
-    d5ae:	65 73 2f 63 6d 61 6b 65 2e 63 68 65 63 6b 5f 63     es/cmake.check_c
-    d5be:	61 63 68 65 0d 0a 09 4b 65 79 62 6f 61 72 64 73     ache...Keyboards
-    d5ce:	2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c     /ICED-R/CMakeFil
-    d5de:	65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64     es/kiibohd.elf.d
-    d5ee:	69 72 2f 43 2e 69 6e 63 6c 75 64 65 63 61 63 68     ir/C.includecach
-    d5fe:	65 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     e...Keyboards/IC
-    d60e:	45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-R/CMakeFiles/
-    d61e:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
-    d62e:	44 65 62 75 67 2f 63 6c 69 2f 63 6c 69 2e 63 2e     Debug/cli/cli.c.
-    d63e:	64 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     d...Keyboards/IC
-    d64e:	45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-R/CMakeFiles/
-    d65e:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
-    d66e:	44 65 62 75 67 2f 63 6c 69 2f 63 6c 69 2e 63 2e     Debug/cli/cli.c.
-    d67e:	6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     o...Keyboards/IC
-    d68e:	45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-R/CMakeFiles/
-    d69e:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
-    d6ae:	44 65 62 75 67 2f 6c 65 64 2f 6c 65 64 2e 63 2e     Debug/led/led.c.
-    d6be:	64 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     d...Keyboards/IC
-    d6ce:	45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-R/CMakeFiles/
-    d6de:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
-    d6ee:	44 65 62 75 67 2f 6c 65 64 2f 6c 65 64 2e 63 2e     Debug/led/led.c.
-    d6fe:	6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     o...Keyboards/IC
-    d70e:	45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-R/CMakeFiles/
-    d71e:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
-    d72e:	44 65 62 75 67 2f 70 72 69 6e 74 2f 70 72 69 6e     Debug/print/prin
-    d73e:	74 2e 63 2e 64 0d 0a 09 4b 65 79 62 6f 61 72 64     t.c.d...Keyboard
-    d74e:	73 2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65 46 69     s/ICED-R/CMakeFi
-    d75e:	6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e     les/kiibohd.elf.
-    d76e:	64 69 72 2f 44 65 62 75 67 2f 70 72 69 6e 74 2f     dir/Debug/print/
-    d77e:	70 72 69 6e 74 2e 63 2e 6f 0d 0a 09 4b 65 79 62     print.c.o...Keyb
-    d78e:	6f 61 72 64 73 2f 49 43 45 44 2d 52 2f 43 4d 61     oards/ICED-R/CMa
-    d79e:	6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e     keFiles/kiibohd.
-    d7ae:	65 6c 66 2e 64 69 72 2f 44 65 70 65 6e 64 49 6e     elf.dir/DependIn
-    d7be:	66 6f 2e 63 6d 61 6b 65 0d 0a 09 4b 65 79 62 6f     fo.cmake...Keybo
-    d7ce:	61 72 64 73 2f 49 43 45 44 2d 52 2f 43 4d 61 6b     ards/ICED-R/CMak
-    d7de:	65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65     eFiles/kiibohd.e
-    d7ee:	6c 66 2e 64 69 72 2f 4c 69 62 2f 64 65 6c 61 79     lf.dir/Lib/delay
-    d7fe:	2e 63 2e 64 0d 0a 09 4b 65 79 62 6f 61 72 64 73     .c.d...Keyboards
-    d80e:	2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c     /ICED-R/CMakeFil
-    d81e:	65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64     es/kiibohd.elf.d
-    d82e:	69 72 2f 4c 69 62 2f 64 65 6c 61 79 2e 63 2e 6f     ir/Lib/delay.c.o
-    d83e:	0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45     ...Keyboards/ICE
-    d84e:	44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b     D-R/CMakeFiles/k
-    d85e:	69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4c     iibohd.elf.dir/L
-    d86e:	69 62 2f 6d 6b 32 30 64 78 2e 63 2e 64 0d 0a 09     ib/mk20dx.c.d...
-    d87e:	4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52     Keyboards/ICED-R
-    d88e:	2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62     /CMakeFiles/kiib
-    d89e:	6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4c 69 62 2f     ohd.elf.dir/Lib/
-    d8ae:	6d 6b 32 30 64 78 2e 63 2e 6f 0d 0a 09 4b 65 79     mk20dx.c.o...Key
-    d8be:	62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f 43 4d     boards/ICED-R/CM
-    d8ce:	61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64     akeFiles/kiibohd
-    d8de:	2e 65 6c 66 2e 64 69 72 2f 4d 61 63 72 6f 2f 50     .elf.dir/Macro/P
-    d8ee:	61 72 74 69 61 6c 4d 61 70 2f 6d 61 63 72 6f 2e     artialMap/macro.
-    d8fe:	63 2e 64 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f     c.d...Keyboards/
-    d90e:	49 43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65     ICED-R/CMakeFile
-    d91e:	73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69     s/kiibohd.elf.di
-    d92e:	72 2f 4d 61 63 72 6f 2f 50 61 72 74 69 61 6c 4d     r/Macro/PartialM
-    d93e:	61 70 2f 6d 61 63 72 6f 2e 63 2e 6f 0d 0a 09 4b     ap/macro.c.o...K
-    d94e:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f     eyboards/ICED-R/
-    d95e:	43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f     CMakeFiles/kiibo
-    d96e:	68 64 2e 65 6c 66 2e 64 69 72 2f 4d 61 63 72 6f     hd.elf.dir/Macro
-    d97e:	2f 50 61 72 74 69 61 6c 4d 61 70 2f 72 65 73 75     /PartialMap/resu
-    d98e:	6c 74 2e 63 2e 64 0d 0a 09 4b 65 79 62 6f 61 72     lt.c.d...Keyboar
-    d99e:	64 73 2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65 46     ds/ICED-R/CMakeF
-    d9ae:	69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66     iles/kiibohd.elf
-    d9be:	2e 64 69 72 2f 4d 61 63 72 6f 2f 50 61 72 74 69     .dir/Macro/Parti
-    d9ce:	61 6c 4d 61 70 2f 72 65 73 75 6c 74 2e 63 2e 6f     alMap/result.c.o
-    d9de:	0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45     ...Keyboards/ICE
-    d9ee:	44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b     D-R/CMakeFiles/k
-    d9fe:	69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4d     iibohd.elf.dir/M
-    da0e:	61 63 72 6f 2f 50 61 72 74 69 61 6c 4d 61 70 2f     acro/PartialMap/
-    da1e:	74 72 69 67 67 65 72 2e 63 2e 64 0d 0a 09 4b 65     trigger.c.d...Ke
-    da2e:	79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f 43     yboards/ICED-R/C
-    da3e:	4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68     MakeFiles/kiiboh
-    da4e:	64 2e 65 6c 66 2e 64 69 72 2f 4d 61 63 72 6f 2f     d.elf.dir/Macro/
-    da5e:	50 61 72 74 69 61 6c 4d 61 70 2f 74 72 69 67 67     PartialMap/trigg
-    da6e:	65 72 2e 63 2e 6f 0d 0a 09 4b 65 79 62 6f 61 72     er.c.o...Keyboar
-    da7e:	64 73 2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65 46     ds/ICED-R/CMakeF
-    da8e:	69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66     iles/kiibohd.elf
-    da9e:	2e 64 69 72 2f 4f 75 74 70 75 74 2f 70 6a 72 63     .dir/Output/pjrc
-    daae:	55 53 42 2f 61 72 6d 2f 75 73 62 5f 64 65 73 63     USB/arm/usb_desc
-    dabe:	2e 63 2e 64 0d 0a 09 4b 65 79 62 6f 61 72 64 73     .c.d...Keyboards
-    dace:	2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c     /ICED-R/CMakeFil
-    dade:	65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64     es/kiibohd.elf.d
-    daee:	69 72 2f 4f 75 74 70 75 74 2f 70 6a 72 63 55 53     ir/Output/pjrcUS
-    dafe:	42 2f 61 72 6d 2f 75 73 62 5f 64 65 73 63 2e 63     B/arm/usb_desc.c
-    db0e:	2e 6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49     .o...Keyboards/I
-    db1e:	43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73     CED-R/CMakeFiles
-    db2e:	2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72     /kiibohd.elf.dir
-    db3e:	2f 4f 75 74 70 75 74 2f 70 6a 72 63 55 53 42 2f     /Output/pjrcUSB/
-    db4e:	61 72 6d 2f 75 73 62 5f 64 65 76 2e 63 2e 64 0d     arm/usb_dev.c.d.
-    db5e:	0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44     ..Keyboards/ICED
-    db6e:	2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69     -R/CMakeFiles/ki
-    db7e:	69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75     ibohd.elf.dir/Ou
-    db8e:	74 70 75 74 2f 70 6a 72 63 55 53 42 2f 61 72 6d     tput/pjrcUSB/arm
-    db9e:	2f 75 73 62 5f 64 65 76 2e 63 2e 6f 0d 0a 09 4b     /usb_dev.c.o...K
-    dbae:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f     eyboards/ICED-R/
-    dbbe:	43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f     CMakeFiles/kiibo
-    dbce:	68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75 74 70 75     hd.elf.dir/Outpu
-    dbde:	74 2f 70 6a 72 63 55 53 42 2f 61 72 6d 2f 75 73     t/pjrcUSB/arm/us
-    dbee:	62 5f 6a 6f 79 73 74 69 63 6b 2e 63 2e 64 0d 0a     b_joystick.c.d..
-    dbfe:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    dc0e:	52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69     R/CMakeFiles/kii
-    dc1e:	62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75 74     bohd.elf.dir/Out
-    dc2e:	70 75 74 2f 70 6a 72 63 55 53 42 2f 61 72 6d 2f     put/pjrcUSB/arm/
-    dc3e:	75 73 62 5f 6a 6f 79 73 74 69 63 6b 2e 63 2e 6f     usb_joystick.c.o
-    dc4e:	0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45     ...Keyboards/ICE
-    dc5e:	44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b     D-R/CMakeFiles/k
-    dc6e:	69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4f     iibohd.elf.dir/O
-    dc7e:	75 74 70 75 74 2f 70 6a 72 63 55 53 42 2f 61 72     utput/pjrcUSB/ar
-    dc8e:	6d 2f 75 73 62 5f 6b 65 79 62 6f 61 72 64 2e 63     m/usb_keyboard.c
-    dc9e:	2e 64 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49     .d...Keyboards/I
-    dcae:	43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73     CED-R/CMakeFiles
-    dcbe:	2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72     /kiibohd.elf.dir
-    dcce:	2f 4f 75 74 70 75 74 2f 70 6a 72 63 55 53 42 2f     /Output/pjrcUSB/
-    dcde:	61 72 6d 2f 75 73 62 5f 6b 65 79 62 6f 61 72 64     arm/usb_keyboard
-    dcee:	2e 63 2e 6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73     .c.o...Keyboards
-    dcfe:	2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c     /ICED-R/CMakeFil
-    dd0e:	65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64     es/kiibohd.elf.d
-    dd1e:	69 72 2f 4f 75 74 70 75 74 2f 70 6a 72 63 55 53     ir/Output/pjrcUS
-    dd2e:	42 2f 61 72 6d 2f 75 73 62 5f 6d 65 6d 2e 63 2e     B/arm/usb_mem.c.
-    dd3e:	64 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     d...Keyboards/IC
-    dd4e:	45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-R/CMakeFiles/
-    dd5e:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
-    dd6e:	4f 75 74 70 75 74 2f 70 6a 72 63 55 53 42 2f 61     Output/pjrcUSB/a
-    dd7e:	72 6d 2f 75 73 62 5f 6d 65 6d 2e 63 2e 6f 0d 0a     rm/usb_mem.c.o..
-    dd8e:	09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d     .Keyboards/ICED-
-    dd9e:	52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69     R/CMakeFiles/kii
-    ddae:	62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75 74     bohd.elf.dir/Out
-    ddbe:	70 75 74 2f 70 6a 72 63 55 53 42 2f 61 72 6d 2f     put/pjrcUSB/arm/
-    ddce:	75 73 62 5f 6d 6f 75 73 65 2e 63 2e 64 0d 0a 09     usb_mouse.c.d...
-    ddde:	4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52     Keyboards/ICED-R
-    ddee:	2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62     /CMakeFiles/kiib
-    ddfe:	6f 68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75 74 70     ohd.elf.dir/Outp
-    de0e:	75 74 2f 70 6a 72 63 55 53 42 2f 61 72 6d 2f 75     ut/pjrcUSB/arm/u
-    de1e:	73 62 5f 6d 6f 75 73 65 2e 63 2e 6f 0d 0a 09 4b     sb_mouse.c.o...K
-    de2e:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f     eyboards/ICED-R/
-    de3e:	43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f     CMakeFiles/kiibo
-    de4e:	68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75 74 70 75     hd.elf.dir/Outpu
-    de5e:	74 2f 70 6a 72 63 55 53 42 2f 61 72 6d 2f 75 73     t/pjrcUSB/arm/us
-    de6e:	62 5f 73 65 72 69 61 6c 2e 63 2e 64 0d 0a 09 4b     b_serial.c.d...K
-    de7e:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f     eyboards/ICED-R/
-    de8e:	43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f     CMakeFiles/kiibo
-    de9e:	68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75 74 70 75     hd.elf.dir/Outpu
-    deae:	74 2f 70 6a 72 63 55 53 42 2f 61 72 6d 2f 75 73     t/pjrcUSB/arm/us
-    debe:	62 5f 73 65 72 69 61 6c 2e 63 2e 6f 0d 0a 09 4b     b_serial.c.o...K
-    dece:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f     eyboards/ICED-R/
-    dede:	43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f     CMakeFiles/kiibo
-    deee:	68 64 2e 65 6c 66 2e 64 69 72 2f 4f 75 74 70 75     hd.elf.dir/Outpu
-    defe:	74 2f 70 6a 72 63 55 53 42 2f 6f 75 74 70 75 74     t/pjrcUSB/output
-    df0e:	5f 63 6f 6d 2e 63 2e 64 0d 0a 09 4b 65 79 62 6f     _com.c.d...Keybo
-    df1e:	61 72 64 73 2f 49 43 45 44 2d 52 2f 43 4d 61 6b     ards/ICED-R/CMak
-    df2e:	65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65     eFiles/kiibohd.e
-    df3e:	6c 66 2e 64 69 72 2f 4f 75 74 70 75 74 2f 70 6a     lf.dir/Output/pj
-    df4e:	72 63 55 53 42 2f 6f 75 74 70 75 74 5f 63 6f 6d     rcUSB/output_com
-    df5e:	2e 63 2e 6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73     .c.o...Keyboards
-    df6e:	2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c     /ICED-R/CMakeFil
-    df7e:	65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64     es/kiibohd.elf.d
-    df8e:	69 72 2f 53 63 61 6e 2f 49 53 53 49 4c 65 64 2f     ir/Scan/ISSILed/
-    df9e:	6c 65 64 5f 73 63 61 6e 2e 63 2e 64 0d 0a 09 4b     led_scan.c.d...K
-    dfae:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f     eyboards/ICED-R/
-    dfbe:	43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f     CMakeFiles/kiibo
-    dfce:	68 64 2e 65 6c 66 2e 64 69 72 2f 53 63 61 6e 2f     hd.elf.dir/Scan/
-    dfde:	49 53 53 49 4c 65 64 2f 6c 65 64 5f 73 63 61 6e     ISSILed/led_scan
-    dfee:	2e 63 2e 6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73     .c.o...Keyboards
-    dffe:	2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c     /ICED-R/CMakeFil
-    e00e:	65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64     es/kiibohd.elf.d
-    e01e:	69 72 2f 53 63 61 6e 2f 4d 44 45 72 67 6f 31 2d     ir/Scan/MDErgo1-
-    e02e:	43 75 73 74 6f 6d 4c 6f 67 6f 2f 73 63 61 6e 5f     CustomLogo/scan_
-    e03e:	6c 6f 6f 70 2e 63 2e 64 0d 0a 09 4b 65 79 62 6f     loop.c.d...Keybo
-    e04e:	61 72 64 73 2f 49 43 45 44 2d 52 2f 43 4d 61 6b     ards/ICED-R/CMak
-    e05e:	65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65     eFiles/kiibohd.e
-    e06e:	6c 66 2e 64 69 72 2f 53 63 61 6e 2f 4d 44 45 72     lf.dir/Scan/MDEr
-    e07e:	67 6f 31 2d 43 75 73 74 6f 6d 4c 6f 67 6f 2f 73     go1-CustomLogo/s
-    e08e:	63 61 6e 5f 6c 6f 6f 70 2e 63 2e 6f 0d 0a 09 4b     can_loop.c.o...K
-    e09e:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f     eyboards/ICED-R/
-    e0ae:	43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f     CMakeFiles/kiibo
-    e0be:	68 64 2e 65 6c 66 2e 64 69 72 2f 53 63 61 6e 2f     hd.elf.dir/Scan/
-    e0ce:	4d 61 74 72 69 78 41 52 4d 2f 6d 61 74 72 69 78     MatrixARM/matrix
-    e0de:	5f 73 63 61 6e 2e 63 2e 64 0d 0a 09 4b 65 79 62     _scan.c.d...Keyb
-    e0ee:	6f 61 72 64 73 2f 49 43 45 44 2d 52 2f 43 4d 61     oards/ICED-R/CMa
-    e0fe:	6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e     keFiles/kiibohd.
-    e10e:	65 6c 66 2e 64 69 72 2f 53 63 61 6e 2f 4d 61 74     elf.dir/Scan/Mat
-    e11e:	72 69 78 41 52 4d 2f 6d 61 74 72 69 78 5f 73 63     rixARM/matrix_sc
-    e12e:	61 6e 2e 63 2e 6f 0d 0a 09 4b 65 79 62 6f 61 72     an.c.o...Keyboar
-    e13e:	64 73 2f 49 43 45 44 2d 52 2f 43 4d 61 6b 65 46     ds/ICED-R/CMakeF
-    e14e:	69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66     iles/kiibohd.elf
-    e15e:	2e 64 69 72 2f 53 63 61 6e 2f 53 54 4c 63 64 2f     .dir/Scan/STLcd/
-    e16e:	6c 63 64 5f 73 63 61 6e 2e 63 2e 64 0d 0a 09 4b     lcd_scan.c.d...K
-    e17e:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f     eyboards/ICED-R/
-    e18e:	43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f     CMakeFiles/kiibo
-    e19e:	68 64 2e 65 6c 66 2e 64 69 72 2f 53 63 61 6e 2f     hd.elf.dir/Scan/
-    e1ae:	53 54 4c 63 64 2f 6c 63 64 5f 73 63 61 6e 2e 63     STLcd/lcd_scan.c
-    e1be:	2e 6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49     .o...Keyboards/I
-    e1ce:	43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73     CED-R/CMakeFiles
-    e1de:	2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72     /kiibohd.elf.dir
-    e1ee:	2f 53 63 61 6e 2f 55 41 52 54 43 6f 6e 6e 65 63     /Scan/UARTConnec
-    e1fe:	74 2f 63 6f 6e 6e 65 63 74 5f 73 63 61 6e 2e 63     t/connect_scan.c
-    e20e:	2e 64 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49     .d...Keyboards/I
-    e21e:	43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73     CED-R/CMakeFiles
-    e22e:	2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72     /kiibohd.elf.dir
-    e23e:	2f 53 63 61 6e 2f 55 41 52 54 43 6f 6e 6e 65 63     /Scan/UARTConnec
-    e24e:	74 2f 63 6f 6e 6e 65 63 74 5f 73 63 61 6e 2e 63     t/connect_scan.c
-    e25e:	2e 6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49     .o...Keyboards/I
-    e26e:	43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73     CED-R/CMakeFiles
-    e27e:	2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72     /kiibohd.elf.dir
-    e28e:	2f 62 75 69 6c 64 2e 6d 61 6b 65 0d 0a 09 4b 65     /build.make...Ke
-    e29e:	79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f 43     yboards/ICED-R/C
-    e2ae:	4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68     MakeFiles/kiiboh
-    e2be:	64 2e 65 6c 66 2e 64 69 72 2f 63 6d 61 6b 65 5f     d.elf.dir/cmake_
-    e2ce:	63 6c 65 61 6e 2e 63 6d 61 6b 65 0d 0a 09 4b 65     clean.cmake...Ke
-    e2de:	79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f 43     yboards/ICED-R/C
-    e2ee:	4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68     MakeFiles/kiiboh
-    e2fe:	64 2e 65 6c 66 2e 64 69 72 2f 64 65 70 65 6e 64     d.elf.dir/depend
-    e30e:	2e 69 6e 74 65 72 6e 61 6c 0d 0a 09 4b 65 79 62     .internal...Keyb
-    e31e:	6f 61 72 64 73 2f 49 43 45 44 2d 52 2f 43 4d 61     oards/ICED-R/CMa
-    e32e:	6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64 2e     keFiles/kiibohd.
-    e33e:	65 6c 66 2e 64 69 72 2f 64 65 70 65 6e 64 2e 6d     elf.dir/depend.m
-    e34e:	61 6b 65 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f     ake...Keyboards/
-    e35e:	49 43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65     ICED-R/CMakeFile
-    e36e:	73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69     s/kiibohd.elf.di
-    e37e:	72 2f 66 6c 61 67 73 2e 6d 61 6b 65 0d 0a 09 4b     r/flags.make...K
-    e38e:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f     eyboards/ICED-R/
-    e39e:	43 4d 61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f     CMakeFiles/kiibo
-    e3ae:	68 64 2e 65 6c 66 2e 64 69 72 2f 6c 69 6e 6b 2e     hd.elf.dir/link.
-    e3be:	74 78 74 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f     txt...Keyboards/
-    e3ce:	49 43 45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65     ICED-R/CMakeFile
-    e3de:	73 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69     s/kiibohd.elf.di
-    e3ee:	72 2f 6d 61 69 6e 2e 63 2e 64 0d 0a 09 4b 65 79     r/main.c.d...Key
-    e3fe:	62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f 43 4d     boards/ICED-R/CM
-    e40e:	61 6b 65 46 69 6c 65 73 2f 6b 69 69 62 6f 68 64     akeFiles/kiibohd
-    e41e:	2e 65 6c 66 2e 64 69 72 2f 6d 61 69 6e 2e 63 2e     .elf.dir/main.c.
-    e42e:	6f 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     o...Keyboards/IC
-    e43e:	45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-R/CMakeFiles/
-    e44e:	6b 69 69 62 6f 68 64 2e 65 6c 66 2e 64 69 72 2f     kiibohd.elf.dir/
-    e45e:	70 72 6f 67 72 65 73 73 2e 6d 61 6b 65 0d 0a 09     progress.make...
-    e46e:	4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52     Keyboards/ICED-R
-    e47e:	2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 6c 6c 5f     /CMakeFiles/kll_
-    e48e:	72 65 67 65 6e 2e 64 69 72 2f 44 65 70 65 6e 64     regen.dir/Depend
-    e49e:	49 6e 66 6f 2e 63 6d 61 6b 65 0d 0a 09 4b 65 79     Info.cmake...Key
-    e4ae:	62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f 43 4d     boards/ICED-R/CM
-    e4be:	61 6b 65 46 69 6c 65 73 2f 6b 6c 6c 5f 72 65 67     akeFiles/kll_reg
-    e4ce:	65 6e 2e 64 69 72 2f 62 75 69 6c 64 2e 6d 61 6b     en.dir/build.mak
-    e4de:	65 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     e...Keyboards/IC
-    e4ee:	45 44 2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f     ED-R/CMakeFiles/
-    e4fe:	6b 6c 6c 5f 72 65 67 65 6e 2e 64 69 72 2f 63 6d     kll_regen.dir/cm
-    e50e:	61 6b 65 5f 63 6c 65 61 6e 2e 63 6d 61 6b 65 0d     ake_clean.cmake.
-    e51e:	0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44     ..Keyboards/ICED
-    e52e:	2d 52 2f 43 4d 61 6b 65 46 69 6c 65 73 2f 6b 6c     -R/CMakeFiles/kl
-    e53e:	6c 5f 72 65 67 65 6e 2e 64 69 72 2f 70 72 6f 67     l_regen.dir/prog
-    e54e:	72 65 73 73 2e 6d 61 6b 65 0d 0a 09 4b 65 79 62     ress.make...Keyb
-    e55e:	6f 61 72 64 73 2f 49 43 45 44 2d 52 2f 43 4d 61     oards/ICED-R/CMa
-    e56e:	6b 65 46 69 6c 65 73 2f 70 72 6f 67 72 65 73 73     keFiles/progress
-    e57e:	2e 6d 61 72 6b 73 0d 0a 09 4b 65 79 62 6f 61 72     .marks...Keyboar
-    e58e:	64 73 2f 49 43 45 44 2d 52 2f 4d 61 6b 65 66 69     ds/ICED-R/Makefi
-    e59e:	6c 65 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49     le...Keyboards/I
-    e5ae:	43 45 44 2d 52 2f 62 75 69 6c 64 76 61 72 73 2e     CED-R/buildvars.
-    e5be:	68 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     h...Keyboards/IC
-    e5ce:	45 44 2d 52 2f 63 6d 61 6b 65 5f 69 6e 73 74 61     ED-R/cmake_insta
-    e5de:	6c 6c 2e 63 6d 61 6b 65 0d 0a 09 4b 65 79 62 6f     ll.cmake...Keybo
-    e5ee:	61 72 64 73 2f 49 43 45 44 2d 52 2f 63 6f 6d 70     ards/ICED-R/comp
-    e5fe:	69 6c 65 5f 63 6f 6d 6d 61 6e 64 73 2e 6a 73 6f     ile_commands.jso
-    e60e:	6e 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43     n...Keyboards/IC
-    e61e:	45 44 2d 52 2f 63 6f 6d 70 69 6c 65 72 0d 0a 09     ED-R/compiler...
-    e62e:	4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52     Keyboards/ICED-R
-    e63e:	2f 67 65 6e 65 72 61 74 65 64 4b 65 79 6d 61 70     /generatedKeymap
-    e64e:	2e 68 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49     .h...Keyboards/I
-    e65e:	43 45 44 2d 52 2f 6b 69 69 62 6f 68 64 2e 64 66     CED-R/kiibohd.df
-    e66e:	75 2e 62 69 6e 0d 0a 09 4b 65 79 62 6f 61 72 64     u.bin...Keyboard
-    e67e:	73 2f 49 43 45 44 2d 52 2f 6b 69 69 62 6f 68 64     s/ICED-R/kiibohd
-    e68e:	2e 65 6c 66 0d 0a 09 4b 65 79 62 6f 61 72 64 73     .elf...Keyboards
-    e69e:	2f 49 43 45 44 2d 52 2f 6b 69 69 62 6f 68 64 2e     /ICED-R/kiibohd.
-    e6ae:	6c 73 73 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f     lss...Keyboards/
-    e6be:	49 43 45 44 2d 52 2f 6b 69 69 62 6f 68 64 2e 73     ICED-R/kiibohd.s
-    e6ce:	79 6d 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49     ym...Keyboards/I
-    e6de:	43 45 44 2d 52 2f 6b 6c 6c 5f 64 65 66 73 2e 68     CED-R/kll_defs.h
-    e6ee:	0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 49 43 45     ...Keyboards/ICE
-    e6fe:	44 2d 52 2f 6c 69 6e 6b 2e 6d 61 70 0d 0a 09 4b     D-R/link.map...K
-    e70e:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 52 2f     eyboards/ICED-R/
-    e71e:	6c 6f 61 64 0d 0a 09 4b 65 79 62 6f 61 72 64 73     load...Keyboards
-    e72e:	2f 52 45 41 44 4d 45 2e 6d 61 72 6b 64 6f 77 6e     /README.markdown
-    e73e:	0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 65 72 67     ...Keyboards/erg
-    e74e:	6f 64 6f 78 2d 63 75 73 74 6f 6d 2e 62 61 73 68     odox-custom.bash
-    e75e:	0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f 65 72 67     ...Keyboards/erg
-    e76e:	6f 64 6f 78 2e 62 61 73 68 0d 0a 09 4b 65 79 62     odox.bash...Keyb
-    e77e:	6f 61 72 64 73 2f 69 6e 66 69 6e 69 74 79 2e 62     oards/infinity.b
-    e78e:	61 73 68 0d 0a 09 4b 65 79 62 6f 61 72 64 73 2f     ash...Keyboards/
-    e79e:	74 65 6d 70 6c 61 74 65 2e 62 61 73 68 0d 0a 09     template.bash...
-    e7ae:	4b 65 79 62 6f 61 72 64 73 2f 77 68 69 74 65 66     Keyboards/whitef
-    e7be:	6f 78 2e 62 61 73 68 0d 0a 09 52 45 41 44 4d 45     ox.bash...README
-    e7ce:	2e 6d 61 72 6b 64 6f 77 6e 0d 0a 09 52 45 41 44     .markdown...READ
-    e7de:	4d 45 2e 6f 6c 64 2e 6d 61 72 6b 64 6f 77 6e 0d     ME.old.markdown.
-    e7ee:	0a 09 62 75 69 6c 64 61 6c 6c 2e 62 61 73 68 0d     ..buildall.bash.
-    e7fe:	0a 09 63 6f 6d 70 69 6c 65 5f 63 6f 6d 6d 61 6e     ..compile_comman
-    e80e:	64 73 2e 6a 73 6f 6e 0d 0a 09 64 65 66 61 75 6c     ds.json...defaul
-    e81e:	74 2e 70 6e 67 0d 0a 09 6b 6c 6c 0d 0a 00 20 1b     t.png...kll... .
-    e82e:	5b 31 6d 52 65 70 6f 20 4f 72 69 67 69 6e 3a 1b     [1mRepo Origin:.
-    e83e:	5b 30 6d 20 20 20 67 69 74 40 67 69 74 68 75 62     [0m   git@github
-    e84e:	2e 63 6f 6d 3a 62 77 76 6f 73 73 2f 65 72 67 6f     .com:bwvoss/ergo
-    e85e:	64 6f 78 2d 66 69 72 6d 77 61 72 65 2e 67 69 74     dox-firmware.git
-    e86e:	0d 0a 00 20 1b 5b 31 6d 43 6f 6d 6d 69 74 20 44     ... .[1mCommit D
-    e87e:	61 74 65 3a 1b 5b 30 6d 20 20 20 32 30 31 36 2d     ate:.[0m   2016-
-    e88e:	30 36 2d 30 31 20 31 39 3a 34 37 3a 31 31 20 2d     06-01 19:47:11 -
-    e89e:	30 35 30 30 0d 0a 00 20 1b 5b 31 6d 43 6f 6d 6d     0500... .[1mComm
-    e8ae:	69 74 20 41 75 74 68 6f 72 3a 1b 5b 30 6d 20 42     it Author:.[0m B
-    e8be:	65 6e 20 56 6f 73 73 20 3c 62 77 76 6f 73 73 40     en Voss <bwvoss@
-    e8ce:	67 6d 61 69 6c 2e 63 6f 6d 3e 0d 0a 00 20 1b 5b     gmail.com>... .[
-    e8de:	31 6d 42 75 69 6c 64 20 44 61 74 65 3a 1b 5b 30     1mBuild Date:.[0
-    e8ee:	6d 20 20 20 20 32 30 31 36 2d 30 36 2d 30 31 20     m    2016-06-01 
-    e8fe:	32 30 3a 32 34 3a 35 32 20 2d 30 35 30 30 0d 0a     20:24:52 -0500..
-    e90e:	00 20 1b 5b 31 6d 42 75 69 6c 64 20 4f 53 3a 1b     . .[1mBuild OS:.
-    e91e:	5b 30 6d 20 20 20 20 20 20 44 61 72 77 69 6e 2d     [0m      Darwin-
-    e92e:	31 35 2e 35 2e 30 0d 0a 00 20 1b 5b 31 6d 41 72     15.5.0... .[1mAr
-    e93e:	63 68 69 74 65 63 74 75 72 65 3a 1b 5b 30 6d 20     chitecture:.[0m 
-    e94e:	20 61 72 6d 0d 0a 00 20 1b 5b 31 6d 43 68 69 70      arm... .[1mChip
-    e95e:	3a 1b 5b 30 6d 20 20 20 20 20 20 20 20 20 20 6d     :.[0m          m
-    e96e:	6b 32 30 64 78 32 35 36 76 6c 68 37 0d 0a 00 20     k20dx256vlh7... 
-    e97e:	1b 5b 31 6d 43 50 55 3a 1b 5b 30 6d 20 20 20 20     .[1mCPU:.[0m    
-    e98e:	20 20 20 20 20 20 20 63 6f 72 74 65 78 2d 6d 34            cortex-m4
-    e99e:	0d 0a 00 20 1b 5b 31 6d 44 65 76 69 63 65 3a 1b     ... .[1mDevice:.
-    e9ae:	5b 30 6d 20 20 20 20 20 20 20 20 4b 65 79 62 6f     [0m        Keybo
-    e9be:	61 72 64 0d 0a 00 20 1b 5b 31 6d 4d 6f 64 75 6c     ard... .[1mModul
-    e9ce:	65 73 3a 1b 5b 30 6d 20 20 20 20 20 20 20 53 63     es:.[0m       Sc
-    e9de:	61 6e 28 4d 44 45 72 67 6f 31 2d 43 75 73 74 6f     an(MDErgo1-Custo
-    e9ee:	6d 4c 6f 67 6f 29 20 4d 61 63 72 6f 28 50 61 72     mLogo) Macro(Par
-    e9fe:	74 69 61 6c 4d 61 70 29 20 4f 75 74 70 75 74 28     tialMap) Output(
-    ea0e:	70 6a 72 63 55 53 42 29 20 44 65 62 75 67 28 66     pjrcUSB) Debug(f
-    ea1e:	75 6c 6c 29 0d 0a 00 20 1b 5b 31 6d 55 6e 69 71     ull)... .[1mUniq
-    ea2e:	75 65 20 49 64 3a 1b 5b 30 6d 20 20 20 20 20 00     ue Id:.[0m     .
-    ea3e:	1b 5b 31 3b 33 32 6d 49 4e 46 4f 1b 5b 30 6d 20     .[1;32mINFO.[0m 
-    ea4e:	2d 20 48 65 78 20 64 65 62 75 67 20 6d 6f 64 65     - Hex debug mode
-    ea5e:	20 64 69 73 61 62 6c 65 64 2e 2e 2e 0d 0a 00 1b      disabled.......
-    ea6e:	5b 31 3b 33 32 6d 49 4e 46 4f 1b 5b 30 6d 20 2d     [1;32mINFO.[0m -
-    ea7e:	20 48 65 78 20 64 65 62 75 67 20 6d 6f 64 65 20      Hex debug mode 
-    ea8e:	65 6e 61 62 6c 65 64 2e 2e 2e 0d 0a 00 1b 5b 00     enabled.......[.
-    ea9e:	31 3b 35 3b 33 31 00 45 52 52 4f 52 00 22 00 22     1;5;31.ERROR."."
-    eaae:	20 69 73 20 6e 6f 74 20 61 20 76 61 6c 69 64 20      is not a valid 
-    eabe:	63 6f 6d 6d 61 6e 64 2e 2e 2e 74 79 70 65 20 1b     command...type .
-    eace:	5b 33 35 6d 68 65 6c 70 1b 5b 30 6d 00 1b 5b 31     [35mhelp.[0m..[1
-    eade:	3b 35 3b 33 31 6d 45 52 52 4f 52 1b 5b 30 6d 20     ;5;31mERROR.[0m 
-    eaee:	2d 20 4d 61 78 20 6e 75 6d 62 65 72 20 6f 66 20     - Max number of 
-    eafe:	64 69 63 74 69 6f 6e 61 72 69 65 73 20 64 65 66     dictionaries def
-    eb0e:	69 6e 65 64 20 61 6c 72 65 61 64 79 2e 2e 2e 0d     ined already....
-    eb1e:	0a 00 1b 5b 32 4b 0d 00 1b 5b 31 3b 33 34 6d 3a     ...[2K...[1;34m:
-    eb2e:	1b 5b 30 6d 20 00 1b 5b 31 3b 35 3b 33 31 6d 45     .[0m ..[1;5;31mE
-    eb3e:	52 52 4f 52 1b 5b 30 6d 20 2d 20 53 65 72 69 61     RROR.[0m - Seria
-    eb4e:	6c 20 6c 69 6e 65 20 62 75 66 66 65 72 20 69 73     l line buffer is
-    eb5e:	20 66 75 6c 6c 2c 20 64 72 6f 70 70 69 6e 67 20      full, dropping 
-    eb6e:	63 68 61 72 61 63 74 65 72 20 61 6e 64 20 72 65     character and re
-    eb7e:	73 65 74 74 69 6e 67 2e 2e 2e 0d 0a 00 1b 5b 73     setting.......[s
-    eb8e:	0d 0a 00 1b 5b 32 4b 00 1b 5b 75 00 08 20 08 00     ....[2K..[u.. ..
-    eb9e:	63 6c 65 61 72 00 63 6c 69 44 65 62 75 67 00 68     clear.cliDebug.h
-    ebae:	65 6c 70 00 6c 65 64 00 72 65 6c 6f 61 64 00 72     elp.led.reload.r
-    ebbe:	65 73 65 74 00 72 65 73 74 61 72 74 00 76 65 72     eset.restart.ver
-    ebce:	73 69 6f 6e 00                                      sion.
+    c12e:	4c 2f 6b 69 69 62 6f 68 64 2e 65 6c 66 0d 0a 09     L/kiibohd.elf...
+    c13e:	4b 65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c     Keyboards/ICED-L
+    c14e:	2f 6b 69 69 62 6f 68 64 2e 6c 73 73 0d 0a 09 4b     /kiibohd.lss...K
+    c15e:	65 79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f     eyboards/ICED-L/
+    c16e:	6b 69 69 62 6f 68 64 2e 73 79 6d 0d 0a 09 4b 65     kiibohd.sym...Ke
+    c17e:	79 62 6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 6b     yboards/ICED-L/k
+    c18e:	6c 6c 5f 64 65 66 73 2e 68 0d 0a 09 4b 65 79 62     ll_defs.h...Keyb
+    c19e:	6f 61 72 64 73 2f 49 43 45 44 2d 4c 2f 6c 69 6e     oards/ICED-L/lin
+    c1ae:	6b 2e 6d 61 70 0d 0a 09 63 6f 6d 70 69 6c 65 5f     k.map...compile_
+    c1be:	63 6f 6d 6d 61 6e 64 73 2e 6a 73 6f 6e 0d 0a 00     commands.json...
+    c1ce:	20 1b 5b 31 6d 52 65 70 6f 20 4f 72 69 67 69 6e      .[1mRepo Origin
+    c1de:	3a 1b 5b 30 6d 20 20 20 67 69 74 40 67 69 74 68     :.[0m   git@gith
+    c1ee:	75 62 2e 63 6f 6d 3a 62 77 76 6f 73 73 2f 65 72     ub.com:bwvoss/er
+    c1fe:	67 6f 64 6f 78 2d 66 69 72 6d 77 61 72 65 2e 67     godox-firmware.g
+    c20e:	69 74 0d 0a 00 20 1b 5b 31 6d 43 6f 6d 6d 69 74     it... .[1mCommit
+    c21e:	20 44 61 74 65 3a 1b 5b 30 6d 20 20 20 32 30 31      Date:.[0m   201
+    c22e:	36 2d 30 36 2d 30 31 20 32 30 3a 32 38 3a 33 30     6-06-01 20:28:30
+    c23e:	20 2d 30 35 30 30 0d 0a 00 20 1b 5b 31 6d 43 6f      -0500... .[1mCo
+    c24e:	6d 6d 69 74 20 41 75 74 68 6f 72 3a 1b 5b 30 6d     mmit Author:.[0m
+    c25e:	20 42 65 6e 20 56 6f 73 73 20 3c 62 77 76 6f 73      Ben Voss <bwvos
+    c26e:	73 40 67 6d 61 69 6c 2e 63 6f 6d 3e 0d 0a 00 20     s@gmail.com>... 
+    c27e:	1b 5b 31 6d 42 75 69 6c 64 20 44 61 74 65 3a 1b     .[1mBuild Date:.
+    c28e:	5b 30 6d 20 20 20 20 32 30 31 36 2d 30 36 2d 30     [0m    2016-06-0
+    c29e:	32 20 31 30 3a 32 37 3a 34 39 20 2d 30 35 30 30     2 10:27:49 -0500
+    c2ae:	0d 0a 00 20 1b 5b 31 6d 42 75 69 6c 64 20 4f 53     ... .[1mBuild OS
+    c2be:	3a 1b 5b 30 6d 20 20 20 20 20 20 44 61 72 77 69     :.[0m      Darwi
+    c2ce:	6e 2d 31 35 2e 35 2e 30 0d 0a 00 20 1b 5b 31 6d     n-15.5.0... .[1m
+    c2de:	41 72 63 68 69 74 65 63 74 75 72 65 3a 1b 5b 30     Architecture:.[0
+    c2ee:	6d 20 20 61 72 6d 0d 0a 00 20 1b 5b 31 6d 43 68     m  arm... .[1mCh
+    c2fe:	69 70 3a 1b 5b 30 6d 20 20 20 20 20 20 20 20 20     ip:.[0m         
+    c30e:	20 6d 6b 32 30 64 78 32 35 36 76 6c 68 37 0d 0a      mk20dx256vlh7..
+    c31e:	00 20 1b 5b 31 6d 43 50 55 3a 1b 5b 30 6d 20 20     . .[1mCPU:.[0m  
+    c32e:	20 20 20 20 20 20 20 20 20 63 6f 72 74 65 78 2d              cortex-
+    c33e:	6d 34 0d 0a 00 20 1b 5b 31 6d 44 65 76 69 63 65     m4... .[1mDevice
+    c34e:	3a 1b 5b 30 6d 20 20 20 20 20 20 20 20 4b 65 79     :.[0m        Key
+    c35e:	62 6f 61 72 64 0d 0a 00 20 1b 5b 31 6d 4d 6f 64     board... .[1mMod
+    c36e:	75 6c 65 73 3a 1b 5b 30 6d 20 20 20 20 20 20 20     ules:.[0m       
+    c37e:	53 63 61 6e 28 4d 44 45 72 67 6f 31 2d 43 75 73     Scan(MDErgo1-Cus
+    c38e:	74 6f 6d 4c 6f 67 6f 29 20 4d 61 63 72 6f 28 50     tomLogo) Macro(P
+    c39e:	61 72 74 69 61 6c 4d 61 70 29 20 4f 75 74 70 75     artialMap) Outpu
+    c3ae:	74 28 70 6a 72 63 55 53 42 29 20 44 65 62 75 67     t(pjrcUSB) Debug
+    c3be:	28 66 75 6c 6c 29 0d 0a 00 20 1b 5b 31 6d 55 6e     (full)... .[1mUn
+    c3ce:	69 71 75 65 20 49 64 3a 1b 5b 30 6d 20 20 20 20     ique Id:.[0m    
+    c3de:	20 00 1b 5b 31 3b 33 32 6d 49 4e 46 4f 1b 5b 30      ..[1;32mINFO.[0
+    c3ee:	6d 20 2d 20 48 65 78 20 64 65 62 75 67 20 6d 6f     m - Hex debug mo
+    c3fe:	64 65 20 64 69 73 61 62 6c 65 64 2e 2e 2e 0d 0a     de disabled.....
+    c40e:	00 1b 5b 31 3b 33 32 6d 49 4e 46 4f 1b 5b 30 6d     ..[1;32mINFO.[0m
+    c41e:	20 2d 20 48 65 78 20 64 65 62 75 67 20 6d 6f 64      - Hex debug mod
+    c42e:	65 20 65 6e 61 62 6c 65 64 2e 2e 2e 0d 0a 00 1b     e enabled.......
+    c43e:	5b 00 31 3b 35 3b 33 31 00 45 52 52 4f 52 00 22     [.1;5;31.ERROR."
+    c44e:	00 22 20 69 73 20 6e 6f 74 20 61 20 76 61 6c 69     ." is not a vali
+    c45e:	64 20 63 6f 6d 6d 61 6e 64 2e 2e 2e 74 79 70 65     d command...type
+    c46e:	20 1b 5b 33 35 6d 68 65 6c 70 1b 5b 30 6d 00 1b      .[35mhelp.[0m..
+    c47e:	5b 31 3b 35 3b 33 31 6d 45 52 52 4f 52 1b 5b 30     [1;5;31mERROR.[0
+    c48e:	6d 20 2d 20 4d 61 78 20 6e 75 6d 62 65 72 20 6f     m - Max number o
+    c49e:	66 20 64 69 63 74 69 6f 6e 61 72 69 65 73 20 64     f dictionaries d
+    c4ae:	65 66 69 6e 65 64 20 61 6c 72 65 61 64 79 2e 2e     efined already..
+    c4be:	2e 0d 0a 00 1b 5b 32 4b 0d 00 1b 5b 31 3b 33 34     .....[2K...[1;34
+    c4ce:	6d 3a 1b 5b 30 6d 20 00 1b 5b 31 3b 35 3b 33 31     m:.[0m ..[1;5;31
+    c4de:	6d 45 52 52 4f 52 1b 5b 30 6d 20 2d 20 53 65 72     mERROR.[0m - Ser
+    c4ee:	69 61 6c 20 6c 69 6e 65 20 62 75 66 66 65 72 20     ial line buffer 
+    c4fe:	69 73 20 66 75 6c 6c 2c 20 64 72 6f 70 70 69 6e     is full, droppin
+    c50e:	67 20 63 68 61 72 61 63 74 65 72 20 61 6e 64 20     g character and 
+    c51e:	72 65 73 65 74 74 69 6e 67 2e 2e 2e 0d 0a 00 1b     resetting.......
+    c52e:	5b 73 0d 0a 00 1b 5b 32 4b 00 1b 5b 75 00 08 20     [s....[2K..[u.. 
+    c53e:	08 00 63 6c 65 61 72 00 63 6c 69 44 65 62 75 67     ..clear.cliDebug
+    c54e:	00 68 65 6c 70 00 6c 65 64 00 72 65 6c 6f 61 64     .help.led.reload
+    c55e:	00 72 65 73 65 74 00 72 65 73 74 61 72 74 00 76     .reset.restart.v
+    c56e:	65 72 73 69 6f 6e 00                                ersion.
 
-0000ebd3 <resetCLIDict_DescEntry>:
-    ebd3:	52 65 73 65 74 73 20 74 68 65 20 74 65 72 6d 69     Resets the termi
-    ebe3:	6e 61 6c 20 62 61 63 6b 20 74 6f 20 69 6e 69 74     nal back to init
-    ebf3:	69 61 6c 20 73 65 74 74 69 6e 67 73 2e 00 00 00     ial settings....
-    ec03:	00                                                  .
+0000c575 <resetCLIDict_DescEntry>:
+    c575:	52 65 73 65 74 73 20 74 68 65 20 74 65 72 6d 69     Resets the termi
+    c585:	6e 61 6c 20 62 61 63 6b 20 74 6f 20 69 6e 69 74     nal back to init
+    c595:	69 61 6c 20 73 65 74 74 69 6e 67 73 2e 00 00        ial settings...
 
-0000ec04 <basicCLIDict>:
-    ec04:	9e eb 00 00 51 bc 00 00 09 74 00 00 a4 eb 00 00     ....Q....t......
-    ec14:	17 ed 00 00 e1 75 00 00 ad eb 00 00 f2 bb 00 00     .....u..........
-    ec24:	45 74 00 00 b2 eb 00 00 70 ec 00 00 f5 74 00 00     Et......p....t..
-    ec34:	b6 eb 00 00 63 bc 00 00 15 74 00 00 bd eb 00 00     ....c....t......
-    ec44:	d3 eb 00 00 39 74 00 00 c3 eb 00 00 0a bc 00 00     ....9t..........
-    ec54:	09 75 00 00 cb eb 00 00 8e bc 00 00 0d 75 00 00     .u...........u..
-    ec64:	00 00 00 00 00 00 00 00 00 00 00 00                 ............
+0000c5a4 <basicCLIDict>:
+    c5a4:	40 c5 00 00 51 bc 00 00 09 74 00 00 46 c5 00 00     @...Q....t..F...
+    c5b4:	b7 c6 00 00 e1 75 00 00 4f c5 00 00 f2 bb 00 00     .....u..O.......
+    c5c4:	45 74 00 00 54 c5 00 00 10 c6 00 00 f5 74 00 00     Et..T........t..
+    c5d4:	58 c5 00 00 63 bc 00 00 15 74 00 00 5f c5 00 00     X...c....t.._...
+    c5e4:	75 c5 00 00 39 74 00 00 65 c5 00 00 0a bc 00 00     u...9t..e.......
+    c5f4:	09 75 00 00 6d c5 00 00 8e bc 00 00 0d 75 00 00     .u..m........u..
+    c604:	00 00 00 00 00 00 00 00 00 00 00 00                 ............
 
-0000ec70 <ledCLIDict_DescEntry>:
-    ec70:	45 6e 61 62 6c 65 73 2f 44 69 73 61 62 6c 65 73     Enables/Disables
-    ec80:	20 69 6e 64 69 63 61 74 6f 72 20 4c 45 44 2e 20      indicator LED. 
-    ec90:	54 72 79 20 61 20 63 6f 75 70 6c 65 20 74 69 6d     Try a couple tim
-    eca0:	65 73 20 6a 75 73 74 20 69 6e 20 63 61 73 65 20     es just in case 
-    ecb0:	74 68 65 20 4c 45 44 20 69 73 20 69 6e 20 61 6e     the LED is in an
-    ecc0:	20 6f 64 64 20 73 74 61 74 65 2e 0d 0a 09 09 1b      odd state......
-    ecd0:	5b 33 33 6d 57 61 72 6e 69 6e 67 1b 5b 30 6d 3a     [33mWarning.[0m:
-    ece0:	20 4d 61 79 20 61 64 76 65 72 73 65 6c 79 20 61      May adversely a
-    ecf0:	66 66 65 63 74 20 73 6f 6d 65 20 6d 6f 64 75 6c     ffect some modul
-    ed00:	65 73 2e 2e 2e 00                                   es....
+0000c610 <ledCLIDict_DescEntry>:
+    c610:	45 6e 61 62 6c 65 73 2f 44 69 73 61 62 6c 65 73     Enables/Disables
+    c620:	20 69 6e 64 69 63 61 74 6f 72 20 4c 45 44 2e 20      indicator LED. 
+    c630:	54 72 79 20 61 20 63 6f 75 70 6c 65 20 74 69 6d     Try a couple tim
+    c640:	65 73 20 6a 75 73 74 20 69 6e 20 63 61 73 65 20     es just in case 
+    c650:	74 68 65 20 4c 45 44 20 69 73 20 69 6e 20 61 6e     the LED is in an
+    c660:	20 6f 64 64 20 73 74 61 74 65 2e 0d 0a 09 09 1b      odd state......
+    c670:	5b 33 33 6d 57 61 72 6e 69 6e 67 1b 5b 30 6d 3a     [33mWarning.[0m:
+    c680:	20 4d 61 79 20 61 64 76 65 72 73 65 6c 79 20 61      May adversely a
+    c690:	66 66 65 63 74 20 73 6f 6d 65 20 6d 6f 64 75 6c     ffect some modul
+    c6a0:	65 73 2e 2e 2e 00                                   es....
 
-0000ed06 <basicCLIDictName>:
-    ed06:	47 65 6e 65 72 61 6c 20 43 6f 6d 6d 61 6e 64 73     General Commands
-    ed16:	00                                                  .
+0000c6a6 <basicCLIDictName>:
+    c6a6:	47 65 6e 65 72 61 6c 20 43 6f 6d 6d 61 6e 64 73     General Commands
+    c6b6:	00                                                  .
 
-0000ed17 <cliDebugCLIDict_DescEntry>:
-    ed17:	45 6e 61 62 6c 65 73 2f 44 69 73 61 62 6c 65 73     Enables/Disables
-    ed27:	20 68 65 78 20 6f 75 74 70 75 74 20 6f 66 20 74      hex output of t
-    ed37:	68 65 20 6d 6f 73 74 20 72 65 63 65 6e 74 20 63     he most recent c
-    ed47:	6c 69 20 69 6e 70 75 74 2e 00 00 00 00              li input.....
+0000c6b7 <cliDebugCLIDict_DescEntry>:
+    c6b7:	45 6e 61 62 6c 65 73 2f 44 69 73 61 62 6c 65 73     Enables/Disables
+    c6c7:	20 68 65 78 20 6f 75 74 70 75 74 20 6f 66 20 74      hex output of t
+    c6d7:	68 65 20 6d 6f 73 74 20 72 65 63 65 6e 74 20 63     he most recent c
+    c6e7:	6c 69 20 69 6e 70 75 74 2e 00 00 00 00              li input.....
