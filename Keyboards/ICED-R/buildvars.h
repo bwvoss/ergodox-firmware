@@ -30,19 +30,19 @@
 // You can change these to give your code its own name.
 #define STR_MANUFACTURER        L"Kiibohd"
 #define STR_PRODUCT             L"Keyboard - MDErgo1-CustomLogo PartialMap pjrcUSB full"
-#define STR_SERIAL              L"Dirty master - 2016-06-01 20:28:30 -0500"
+#define STR_SERIAL              L"Dirty master - 2016-06-02 10:28:43 -0500"
 
 
 // Strings used in the CLI module
-#define CLI_Revision            "e9210c9e9084b8a28ecbf7af8f06f36e71529bef"
+#define CLI_Revision            "42d29e1c9307243fad326aacd2221ab81860f81e"
 #define CLI_Branch              "master"
 #define CLI_ModifiedStatus      "Dirty"
-#define CLI_ModifiedFiles       "\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Macro/PartialMap/macro.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Macro/PartialMap/result.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Macro/PartialMap/trigger.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_desc.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_dev.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/output_com.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Scan/ISSILed/led_scan.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Scan/MatrixARM/matrix_scan.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Scan/STLcd/lcd_scan.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Scan/UARTConnect/connect_scan.c.o\r\n\tKeyboards/ICED-L/MDErgo1-Default-0.kll\r\n\tKeyboards/ICED-L/buildvars.h\r\n\tKeyboards/ICED-L/generatedKeymap.h\r\n\tKeyboards/ICED-L/kiibohd.dfu.bin\r\n\tKeyboards/ICED-L/kiibohd.elf\r\n\tKeyboards/ICED-L/kiibohd.lss\r\n\tKeyboards/ICED-L/kiibohd.sym\r\n\tKeyboards/ICED-L/kll_defs.h\r\n\tKeyboards/ICED-L/link.map\r\n\tcompile_commands.json"
+#define CLI_ModifiedFiles       "\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Macro/PartialMap/macro.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Macro/PartialMap/result.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Macro/PartialMap/trigger.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_desc.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/arm/usb_dev.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/output_com.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Scan/ISSILed/led_scan.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Scan/MatrixARM/matrix_scan.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Scan/STLcd/lcd_scan.c.o\r\n\tKeyboards/ICED-L/CMakeFiles/kiibohd.elf.dir/Scan/UARTConnect/connect_scan.c.o\r\n\tKeyboards/ICED-L/MDErgo1-Default-0.kll\r\n\tKeyboards/ICED-L/MDErgo1-Default-1.kll\r\n\tKeyboards/ICED-L/MDErgo1-Default-2.kll\r\n\tKeyboards/ICED-L/buildvars.h\r\n\tKeyboards/ICED-L/generatedKeymap.h\r\n\tKeyboards/ICED-L/kiibohd.dfu.bin\r\n\tKeyboards/ICED-L/kiibohd.elf\r\n\tKeyboards/ICED-L/kiibohd.lss\r\n\tKeyboards/ICED-L/kiibohd.sym\r\n\tKeyboards/ICED-L/kll_defs.h\r\n\tKeyboards/ICED-L/link.map\r\n\tKeyboards/ICED-R/CMakeFiles/kiibohd.elf.dir/Debug/cli/cli.c.o\r\n\tKeyboards/ICED-R/CMakeFiles/kiibohd.elf.dir/Output/pjrcUSB/output_com.c.o\r\n\tKeyboards/ICED-R/MDErgo1-Default-0.kll\r\n\tKeyboards/ICED-R/MDErgo1-Default-1.kll\r\n\tKeyboards/ICED-R/MDErgo1-Default-2.kll\r\n\tKeyboards/ICED-R/buildvars.h\r\n\tKeyboards/ICED-R/kiibohd.dfu.bin\r\n\tKeyboards/ICED-R/kiibohd.elf\r\n\tKeyboards/ICED-R/kiibohd.lss\r\n\tKeyboards/ICED-R/kiibohd.sym\r\n\tKeyboards/ICED-R/link.map\r\n\tcompile_commands.json"
 #define CLI_RepoOrigin          "git@github.com:bwvoss/ergodox-firmware.git"
-#define CLI_CommitDate          "2016-06-01 20:28:30 -0500"
+#define CLI_CommitDate          "2016-06-02 10:28:43 -0500"
 #define CLI_CommitAuthor        "Ben Voss <bwvoss@gmail.com>"
 #define CLI_Modules             "Scan(MDErgo1-CustomLogo) Macro(PartialMap) Output(pjrcUSB) Debug(full)"
-#define CLI_BuildDate           "2016-06-02 10:27:49 -0500"
+#define CLI_BuildDate           "2016-06-08 12:59:45 -0500"
 #define CLI_BuildOS             "Darwin-15.5.0"
 #define CLI_Arch                "arm"
 #define CLI_Chip                "mk20dx256vlh7"
